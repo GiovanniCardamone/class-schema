@@ -50,18 +50,12 @@ jobs:
       # Install Dependencies
       - run: npm ci
 
-      # Update Changelog
+      # Bump version, tag commit and generate a changelog
       - name: Conventional Changelog Action
         uses: TriPSs/conventional-changelog-action@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           tag-prefix: 'v'
-
-      # Create Release
-      - name: Create New Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Publish to NPM
       - run: npm publish
