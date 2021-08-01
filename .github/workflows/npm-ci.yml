@@ -1,4 +1,4 @@
-name: Create/Release Package
+name: Release Package
 
 on:
   push:
@@ -55,7 +55,13 @@ jobs:
         uses: TriPSs/conventional-changelog-action@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          git-message: 'chore(release): {version}'
           tag-prefix: 'v'
+          output-file: 'CHANGELOG.md'
+          release-count: '10'
+          skip-on-empty: 'false'
+          skip-version-file: 'false'
+          skip-commit: 'false'
 
       # Publish to NPM
       - run: npm publish
