@@ -1,3 +1,12 @@
+# [0.2.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.1.0...v0.2.0) (2021-08-02)
+
+
+### Features
+
+* added date support ([36b582b](https://github.com/GiovanniCardamone/class-schema/commit/36b582b3d1c0b8bfb00156dbe99dc007f30da31a))
+
+
+
 # [0.1.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.0.12...v0.1.0) (2021-08-02)
 
 
