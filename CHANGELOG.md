@@ -1,3 +1,12 @@
+## [0.0.12](https://github.com/GiovanniCardamone/class-schema/compare/v0.0.11...v0.0.12) (2021-08-01)
+
+
+### Bug Fixes
+
+* dependencies ([4167e02](https://github.com/GiovanniCardamone/class-schema/commit/4167e0291a6e884a7cbc68f6e0966d50a7ad243f))
+
+
+
 ## [0.0.11](https://github.com/GiovanniCardamone/class-schema/compare/v0.0.10...v0.0.11) (2021-08-01)
 
 
