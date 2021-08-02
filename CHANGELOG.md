@@ -1,3 +1,12 @@
+# [0.1.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.0.12...v0.1.0) (2021-08-02)
+
+
+### Features
+
+* added schema, use, prop, array decorators ([a900b3f](https://github.com/GiovanniCardamone/class-schema/commit/a900b3f97d1ce13035d33bdf45c778db221f3890))
+
+
+
 ## [0.0.12](https://github.com/GiovanniCardamone/class-schema/compare/v0.0.11...v0.0.12) (2021-08-01)
 
 
