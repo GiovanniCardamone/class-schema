@@ -1,8 +1,6 @@
 import { expect } from 'chai'
 import 'reflect-metadata'
-import { prop, ref, array, enums } from '../src/property'
-import schema from '../src/schema'
-import use from '../src/use'
+import { use, schema, prop, ref, array, enums } from '../src'
 
 describe('schema', () => {
 	//
