@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import 'reflect-metadata'
-import { prop, ref, array } from '../src/property'
+import { prop, ref, array, enums } from '../src/property'
 import schema from '../src/schema'
 import use from '../src/use'
 
@@ -112,12 +112,27 @@ describe('schema', () => {
 		class TestSchema5 {
 			@ref(TestSchema5Nested)
 			nested!: TestSchema5Nested
+
+			@ref(TestSchema5Nested)
+			another!: TestSchema5Nested
 		}
 
 		expect(use(TestSchema5)).to.deep.contains({
 			type: 'object',
-			required: ['nested'],
+			required: ['nested', 'another'],
 			properties: {
+				another: {
+					type: 'object',
+					required: ['myString'],
+					properties: {
+						myString: {
+							type: 'string',
+						},
+						myNumber: {
+							type: 'number',
+						},
+					},
+				},
 				nested: {
 					type: 'object',
 					required: ['myString'],
@@ -320,6 +335,55 @@ describe('schema', () => {
 							},
 						},
 					},
+				},
+			},
+		})
+
+		done()
+	})
+
+	//
+	it('enum property', (done) => {
+		const ENUM = ['a', 'b', 'c'] // value
+		type ENUM_T = typeof ENUM[number] // type
+		@schema()
+		class TestSchema10 {
+			@enums(ENUM)
+			myEnum!: ENUM_T
+		}
+
+		expect(use(TestSchema10)).to.deep.equals({
+			type: 'object',
+			required: ['myEnum'],
+			properties: {
+				myEnum: {
+					type: 'array',
+					items: {
+						type: 'string',
+						enum: ENUM,
+					},
+				},
+			},
+		})
+
+		done()
+	})
+
+	//
+	it('date prop', (done) => {
+		@schema()
+		class TestSchema11 {
+			@prop()
+			myDate!: Date
+		}
+
+		expect(use(TestSchema11)).to.deep.equals({
+			type: 'object',
+			required: ['myDate'],
+			properties: {
+				myDate: {
+					type: 'string',
+					format: 'date-time',
 				},
 			},
 		})

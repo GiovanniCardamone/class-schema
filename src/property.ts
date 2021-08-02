@@ -10,7 +10,7 @@ interface CtosSchema extends Ctos {
 }
 
 interface Meta {
-	name: 'Number' | 'String' | 'Boolean' | 'Object' | 'Array'
+	name: 'Number' | 'String' | 'Boolean' | 'Date' | 'Object' | 'Array'
 }
 
 interface Prop {
@@ -58,12 +58,38 @@ export function prop(...args: any[]) {
 		}
 
 		// add current prop
-		wrap.__schema.properties = {
-			...wrap.__schema.properties,
-			[name]: buildProperty(
-				type !== undefined ? type.name : meta.name,
-				property?.property
-			),
+		wrap.__schema.properties![name] = buildProperty(
+			type !== undefined ? type.name : meta.name,
+			property?.property
+		)
+
+		if (required) {
+			const r = wrap.__schema.required as Array<string>
+			r.push(name)
+		}
+	}
+}
+
+export function enums(
+	items: string[],
+	{ required, property }: Prop | undefined = {
+		required: true,
+		property: undefined,
+	}
+) {
+	return function (
+		target: SchemaObject,
+		name: string
+		// descriptor: PropertyDescriptor
+	): void {
+		const wrap = wrapSchema(target)
+
+		wrap.__schema.properties![name] = {
+			type: 'array',
+			items: {
+				type: 'string',
+				enum: items,
+			},
 		}
 
 		if (required) {
@@ -75,7 +101,10 @@ export function prop(...args: any[]) {
 
 export function ref(
 	type: SchemaObject,
-	{ required, property }: Prop | undefined = { required: true, property: {} }
+	{ required, property }: Prop | undefined = {
+		required: true,
+		property: undefined,
+	}
 ) {
 	return function (
 		target: SchemaObject,
@@ -86,10 +115,7 @@ export function ref(
 		// const meta = getMetadata(target, name)
 
 		// add current prop
-		wrap.__schema.properties = {
-			...wrap.__schema.properties,
-			[name]: use(type),
-		}
+		wrap.__schema.properties![name] = use(type)
 
 		if (required) {
 			const r = wrap.__schema.required as Array<string>
@@ -120,14 +146,6 @@ export function array(arrayProps?: JSONSchema4) {
 		}
 	}
 }
-
-// export function enum() {
-
-// }
-
-// export function array() {
-
-// }
 
 // export function anyOf() {
 
@@ -164,7 +182,10 @@ function buildProperty(type: Meta['name'], props?: JSONSchema4) {
 			return composeProperty('string', props)
 		case 'Boolean':
 			return composeProperty('boolean', props)
+		case 'Date':
+			return composeProperty('string', { ...props, format: 'date-time' })
 		default:
+			console.log({ type })
 			return composeProperty('object', props)
 	}
 }
