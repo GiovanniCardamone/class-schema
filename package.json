@@ -9,7 +9,7 @@
     "extends": "@giovannicardamone/eslint-config"
   },
   "scripts": {
-    "test": "echo \"Skip: no test specified\" && exit 0",
+    "test": "ts-mocha 'test/**.test.ts'",
     "build": "tsc"
   },
   "repository": {
@@ -26,11 +26,20 @@
   },
   "homepage": "https://github.com/GiovanniCardamone/class-schema#readme",
   "devDependencies": {
-    "@giovannicardamone/eslint-config": "^0.0.1",
-    "@giovannicardamone/prettier-config": "^0.0.2",
+    "@giovannicardamone/eslint-config": "^0.2.0",
+    "@giovannicardamone/prettier-config": "^0.1.1",
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5",
+    "chai": "^4.3.4",
     "eslint": "^7.32.0",
+    "mocha": "^8.4.0",
+    "reflect-metadata": "^0.1.13",
+    "ts-mocha": "^8.0.0",
     "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "json-schema": "^0.3.0"
   }
 }
