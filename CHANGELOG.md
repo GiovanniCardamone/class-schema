@@ -1,3 +1,7 @@
+## [0.3.2](https://github.com/GiovanniCardamone/class-schema/compare/v0.3.1...v0.3.2) (2021-08-04)
+
+
+
 ## [0.3.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.3.0...v0.3.1) (2021-08-04)
 
 
@@ -56,10 +60,6 @@
 
 
 ## [0.0.9](https://github.com/GiovanniCardamone/class-schema/compare/v0.0.7...v0.0.9) (2021-08-01)
-
-
-
-## [0.0.7](https://github.com/GiovanniCardamone/class-schema/compare/v0.0.5...v0.0.7) (2021-08-01)
 
 
 
