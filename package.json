@@ -9,8 +9,11 @@
     "extends": "@giovannicardamone/eslint-config"
   },
   "scripts": {
-    "test": "ts-mocha 'test/**.test.ts'",
-    "build": "tsc"
+    "tests": "ts-mocha 'test/**.test.ts'",
+    "build:watch": "tsc --watch",
+    "build": "tsc",
+    "docs": "docsify generate docs",
+    "docs:watch": "docsify serve docs"
   },
   "repository": {
     "type": "git",
@@ -33,7 +36,9 @@
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5",
     "chai": "^4.3.4",
+    "docsify": "^4.12.1",
     "eslint": "^7.32.0",
+    "husky": "^7.0.1",
     "mocha": "^8.4.0",
     "reflect-metadata": "^0.1.13",
     "ts-mocha": "^8.0.0",
