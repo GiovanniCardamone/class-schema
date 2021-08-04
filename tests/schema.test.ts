@@ -388,4 +388,50 @@ describe('schema', () => {
 
 		done()
 	})
+
+	it('expect error on array prop without type declaration', (done) => {
+		expect(() => {
+			@schema()
+			class TestSchema12 {
+				@array()
+				@prop()
+				myNumberArray!: number[]
+			}
+		}).to.throw(TypeError)
+
+		done()
+	})
+
+	it('expect error on array without any other declaration', (done) => {
+		expect(() => {
+			@schema()
+			class TestSchema13 {
+				@array()
+				myNumberArray!: number[]
+			}
+		}).to.throw(TypeError)
+
+		done()
+	})
+
+	it('Boolean property', (done) => {
+
+		@schema()
+		class testSchema14 {
+			@prop()
+			myBoolean: boolean
+		}
+
+		expect(use(testSchema14)).to.be.deep.equals({
+			type: 'object',
+			required: ['myBoolean'],
+			properties: {
+				myBoolean: {
+					type: 'boolean'
+				}
+			}
+		})
+
+		done()
+	})
 })
