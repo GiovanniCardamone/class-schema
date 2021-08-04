@@ -49,25 +49,78 @@ import 'reflect-metadata'
 ```
 
 ```typescript
-import { use, schema, prop } from 'class-schema'
+import { use, schema, prop, ref, enums } from 'class-schema'
+
+const vowels = ['a', 'e', 'i', 'o', 'u', 'y']
+type Vowels = typeof vowels[number]
+
+@schema()
+class MyObject {
+  @enums(vowels)
+  myEnum: Vowels
+}
 
 @schema()
 class MySchema {
 
   @prop()
   myProp: number
+
+  @array()
+  @prop(Number)
+  myPropArray: number[]
+
+  @ref(MyObject)
+  myObject: MyObject
 }
 
-console.log(use(MySchema))
+```
 
-//  {
-//    type: 'object',
-//    required: ['myProp'],
-//    properties: {
-//      myProp: {
-//        type: 'number'
-//      }
-//  }
+> to get javascript object that represent jsonschema of class `use(MySchema)`
+
+```json5
+// output of `JSON.stringify(use(MySchema))
+{
+  "type": "object",
+  "properties": {
+    "myProp": {
+      "type": "number"
+    },
+    "myPropArray": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "myObject": {
+      "type": "object",
+      "properties": {
+        "myEnum": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "a",
+              "e",
+              "i",
+              "o",
+              "u",
+              "y"
+            ]
+          }
+        }
+      },
+      "required": [
+        "myEnum"
+      ]
+    }
+  },
+  "required": [
+    "myProp",
+    "myPropArray",
+    "myObject"
+  ]
+}
 ```
 
 ## License
