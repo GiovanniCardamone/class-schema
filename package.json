@@ -9,7 +9,7 @@
     "extends": "@giovannicardamone/eslint-config"
   },
   "scripts": {
-    "test": "ts-mocha 'tests/**.test.ts'",
+    "test": "nyc ts-mocha 'tests/**.test.ts'",
     "build:watch": "tsc --watch",
     "build": "tsc",
     "doc": "docsify generate docs",
@@ -39,6 +39,7 @@
     "docsify": "^4.12.1",
     "eslint": "^7.32.0",
     "mocha": "^8.4.0",
+    "nyc": "^15.1.0",
     "reflect-metadata": "^0.1.13",
     "ts-mocha": "^8.0.0",
     "typescript": "^4.3.5"
