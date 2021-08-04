@@ -1,3 +1,12 @@
+# [0.4.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.3.2...v0.4.0) (2021-08-04)
+
+
+### Features
+
+* adding code coverage ([1e7ceb5](https://github.com/GiovanniCardamone/class-schema/commit/1e7ceb53f1c25b2dc09cd777c08a9e3bde691a08))
+
+
+
 ## [0.3.2](https://github.com/GiovanniCardamone/class-schema/compare/v0.3.1...v0.3.2) (2021-08-04)
 
 
@@ -56,10 +65,6 @@
 
 
 ## [0.0.10](https://github.com/GiovanniCardamone/class-schema/compare/v0.0.9...v0.0.10) (2021-08-01)
-
-
-
-## [0.0.9](https://github.com/GiovanniCardamone/class-schema/compare/v0.0.7...v0.0.9) (2021-08-01)
 
 
 
