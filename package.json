@@ -10,10 +10,12 @@
   },
   "scripts": {
     "test": "nyc ts-mocha 'tests/**.test.ts'",
+    "lint": "eslint",
     "build:watch": "tsc --watch",
     "build": "tsc",
     "docs": "docsify generate docs",
-    "docs:watch": "docsify serve docs"
+    "docs:watch": "docsify serve docs",
+    "prepublishOnly": "npm run lint && npm run build"
   },
   "repository": {
     "type": "git",
