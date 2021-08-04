@@ -417,17 +417,44 @@ describe('schema', () => {
 	it('Boolean property', (done) => {
 
 		@schema()
-		class testSchema14 {
+		class TestSchema14 {
 			@prop()
 			myBoolean: boolean
 		}
 
-		expect(use(testSchema14)).to.be.deep.equals({
+		expect(use(TestSchema14)).to.be.deep.equals({
 			type: 'object',
 			required: ['myBoolean'],
 			properties: {
 				myBoolean: {
 					type: 'boolean'
+				}
+			}
+		})
+
+		done()
+	})
+
+	it('optional enum', (done) => {
+		const e = [1, 2, 3]
+		type E = typeof e[number]
+		@schema()
+		class TestSchema15 {
+
+			@enums(e, { required: false })
+			myEnum?: E
+		}
+
+		expect(use(TestSchema15)).to.be.deep.equals({
+			type: 'object',
+			required: [],
+			properties: {
+				myEnum: {
+					type: 'array',
+					items: {
+						type: 'number',
+						enum: e
+					}
 				}
 			}
 		})
