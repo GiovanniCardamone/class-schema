@@ -21,7 +21,7 @@ also the package `reflect-metadata` is required
 
 > file: tsconfig.json
 
-```json
+```json5
 {
   "compilerOptions": {
     // others config in your project
