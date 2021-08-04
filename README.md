@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/GiovanniCardamone/class-schema/actions/workflows/npm-ci.yml/badge.svg)](https://github.com/GiovanniCardamone/class-schema/actions/workflows/npm-ci.yml)
 [![Coverage Status](https://coveralls.io/repos/github/GiovanniCardamone/class-schema/badge.svg?branch=main)](https://coveralls.io/github/GiovanniCardamone/class-schema?branch=main)
-[![Known Vulnerabilities](https://snyk.io/test/github/GiovanniCardamone/class-schema/badge.svg)](https://snyk.io/test/github/fastify/fastify)
+[![Known Vulnerabilities](https://snyk.io/test/github/GiovanniCardamone/class-schema/badge.svg)](https://snyk.io/test/github/GiovanniCardamone/class-schema)
 [![NPM version](https://img.shields.io/npm/v/class-schema.svg?style=plastic)](https://www.npmjs.com/package/class-schema)
 [![NPM downloads](https://img.shields.io/npm/dm/class-schema.svg?style=plastic)](https://www.npmjs.com/package/class-schema)
 
