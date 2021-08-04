@@ -1,7 +1,8 @@
-
 # class-schema
 
 Javascript / Typescript utility to convert class into Json Schema
+
+[![CI](https://github.com/GiovanniCardamone/class-schema/actions/workflows/npm-ci.yml/badge.svg)](https://github.com/GiovanniCardamone/class-schema/actions/workflows/npm-ci.yml)
 
 ## Documentation
 
