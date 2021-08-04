@@ -1,0 +1,7 @@
+tests
+src
+docs
+tsconfig.json
+CHANGELOG.md
+.prettierignore
+.editorconfig
