@@ -71,7 +71,7 @@ export function prop(...args: any[]) {
 }
 
 export function enums(
-	items: string[],
+	items: Array<string | number>,
 	{ required, property }: Prop | undefined = {
 		required: true,
 		property: undefined,
@@ -87,7 +87,7 @@ export function enums(
 		wrap.__schema.properties![name] = {
 			type: 'array',
 			items: {
-				type: 'string',
+				type: typeof items[0] as 'string' | 'number',
 				enum: items,
 			},
 		}
