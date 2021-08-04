@@ -3,6 +3,9 @@
 
 Javascript / Typescript utility to convert class into Json Schema
 
+## Documentation
+
+[Documentation](https://giovannicardam.one/class-schema)
 ## Installation
 
 ```bash
@@ -60,10 +63,6 @@ console.log(use(MySchema))
 //      }
 //  }
 ```
-
-## Documentation
-
-[Documentation](https://giovannicardam.one/class-schema)
 
 ## License
 
