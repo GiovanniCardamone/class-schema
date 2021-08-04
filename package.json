@@ -12,8 +12,8 @@
     "test": "nyc ts-mocha 'tests/**.test.ts'",
     "build:watch": "tsc --watch",
     "build": "tsc",
-    "doc": "docsify generate docs",
-    "doc:watch": "docsify serve docs"
+    "docs": "docsify generate docs",
+    "docs:watch": "docsify serve docs"
   },
   "repository": {
     "type": "git",
