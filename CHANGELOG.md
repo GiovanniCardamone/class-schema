@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.2.1...v0.3.0) (2021-08-04)
+
+
+### Features
+
+* adding docs ([9ff1a9e](https://github.com/GiovanniCardamone/class-schema/commit/9ff1a9ec4b1a151e62330cfec6b55a43312554fd))
+
+
+
 ## [0.2.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.2.0...v0.2.1) (2021-08-02)
 
 
@@ -51,10 +60,6 @@
 
 
 ## [0.0.5](https://github.com/GiovanniCardamone/class-schema/compare/v0.0.3...v0.0.5) (2021-08-01)
-
-
-
-## 0.0.3 (2021-08-01)
 
 
 
