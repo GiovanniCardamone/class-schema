@@ -1,3 +1,17 @@
+# [0.6.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.5.0...v0.6.0) (2021-08-08)
+
+
+### Bug Fixes
+
+* type annotation parentSchema ([71bd739](https://github.com/GiovanniCardamone/class-schema/commit/71bd739c32d139a9d51368979913cd6b9a4e9183))
+
+
+### Features
+
+* extends inheritanche props ([7678d3b](https://github.com/GiovanniCardamone/class-schema/commit/7678d3bb43cbc640b5c2cae5fdb44503c62f0b16))
+
+
+
 # [0.5.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.4.4...v0.5.0) (2021-08-04)
 
 
@@ -56,15 +70,6 @@
 ### Features
 
 * adding docs ([9ff1a9e](https://github.com/GiovanniCardamone/class-schema/commit/9ff1a9ec4b1a151e62330cfec6b55a43312554fd))
-
-
-
-## [0.2.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.2.0...v0.2.1) (2021-08-02)
-
-
-### Bug Fixes
-
-* exported enums, ref from index ([f8bfeb8](https://github.com/GiovanniCardamone/class-schema/commit/f8bfeb8f99de7b0e817dd00a17e05f43a82778b5))
 
 
 
