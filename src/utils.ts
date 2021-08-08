@@ -6,6 +6,7 @@ export interface Ctos {
 
 export interface CtosSchema extends Ctos {
 	__schema: JSONSchema4
+	__proto__?: CtosSchema
 }
 
 export interface Meta {
