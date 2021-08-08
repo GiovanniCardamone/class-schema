@@ -1,13 +1,12 @@
 import { JSONSchema4 } from 'json-schema'
+import { Ctos, CtosSchema } from './utils'
 
-interface Ctos {
-	new (...args: any[]): any
-}
+export default function use(constructor: Ctos): Partial<JSONSchema4> {
+	const ctoschema = constructor as unknown as CtosSchema
 
-export default function use(schemaClass: Ctos): Partial<JSONSchema4> {
-	if ('__schema' in schemaClass.prototype === false) {
+	if ('__schema' in ctoschema === false) {
 		throw new TypeError('not a schema class')
 	}
 
-	return schemaClass.prototype.__schema
+	return JSON.parse(JSON.stringify(ctoschema.__schema))
 }

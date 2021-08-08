@@ -1,13 +1,2 @@
-.editorconfig
-.github
-.husky
-.nyc_output
-.nycrc
-.prettierignore
-CHANGELOG.md
-coverage
-docs
-examples
-src
-tests
-tsconfig.json
+*
+!dist/**/*

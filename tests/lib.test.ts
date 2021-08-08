@@ -4,7 +4,7 @@ import { use, schema, prop, ref, array, enums } from '../src'
 
 describe('schema', () => {
 	//
-	it('use schema should fail on non-schema class', (done) => {
+	it('use non-schema class => must throw TypeError', (done) => {
 		expect(() => {
 			class TestSchema0 {}
 			use(TestSchema0)
@@ -14,7 +14,7 @@ describe('schema', () => {
 	})
 
 	//
-	it('basic schema with title', (done) => {
+	it('schema with title', (done) => {
 		@schema({ title: 'TestSchema1' })
 		class TestSchema1 {}
 
@@ -27,7 +27,7 @@ describe('schema', () => {
 	})
 
 	//
-	it('basic schema with property', (done) => {
+	it('schema with prop', (done) => {
 		@schema()
 		class TestSchema2 {
 			@prop()
@@ -48,7 +48,7 @@ describe('schema', () => {
 	})
 
 	//
-	it('basic schema with optional property', (done) => {
+	it('schema with optional prop', (done) => {
 		@schema()
 		class TestSchema3 {
 			@prop({ required: false })
@@ -69,7 +69,7 @@ describe('schema', () => {
 	})
 
 	//
-	it('basic schema with multiple property', (done) => {
+	it('schema with multiple prop', (done) => {
 		@schema()
 		class TestSchema4 {
 			@prop({ required: false })
@@ -96,7 +96,7 @@ describe('schema', () => {
 	})
 
 	//
-	it('basic schema with custom object property', (done) => {
+	it('schema with ref', (done) => {
 		@schema()
 		class TestSchema5Nested {
 			@prop({ required: false })
@@ -150,7 +150,7 @@ describe('schema', () => {
 	})
 
 	//
-	it('basic schema with multiple nested custom object property', (done) => {
+	it('schema with ref with ref', (done) => {
 		@schema()
 		class TestSchema6NestedNested {
 			@prop({ required: false })
@@ -201,7 +201,7 @@ describe('schema', () => {
 	})
 
 	//
-	it('basic schema with custom array object property', (done) => {
+	it('schema with array ref', (done) => {
 		@schema()
 		class TestSchema7Nested {
 			@prop({ required: false })
@@ -243,7 +243,7 @@ describe('schema', () => {
 	})
 
 	//
-	it('basic schema with object property with array props', (done) => {
+	it('schema with ref with array props', (done) => {
 		@schema()
 		class TestSchema8Nested {
 			@array()
@@ -286,7 +286,7 @@ describe('schema', () => {
 	})
 
 	//
-	it('basic schema with object property with array object', (done) => {
+	it('schema with ref with array ref', (done) => {
 		@schema()
 		class TestSchema9NestedNested {
 			@prop({ required: false })
@@ -341,7 +341,7 @@ describe('schema', () => {
 	})
 
 	//
-	it('enum property', (done) => {
+	it('schema with enums', (done) => {
 		const ENUM = ['a', 'b', 'c'] // value
 		type ENUM_T = typeof ENUM[number] // type
 		@schema()
@@ -368,7 +368,7 @@ describe('schema', () => {
 	})
 
 	//
-	it('date prop', (done) => {
+	it('schema with prop (date)', (done) => {
 		@schema()
 		class TestSchema11 {
 			@prop()
@@ -389,7 +389,7 @@ describe('schema', () => {
 		done()
 	})
 
-	it('expect error on array prop without type declaration', (done) => {
+	it('schema with prop array without type => must throw TypeError', (done) => {
 		expect(() => {
 			@schema()
 			class TestSchema12 {
@@ -402,7 +402,7 @@ describe('schema', () => {
 		done()
 	})
 
-	it('expect error on array without any other declaration', (done) => {
+	it('schema with array without prop => must thriw TypeError', (done) => {
 		expect(() => {
 			@schema()
 			class TestSchema13 {
@@ -414,12 +414,11 @@ describe('schema', () => {
 		done()
 	})
 
-	it('Boolean property', (done) => {
-
+	it('schema with prop (boolean)', (done) => {
 		@schema()
 		class TestSchema14 {
 			@prop()
-			myBoolean: boolean
+			myBoolean!: boolean
 		}
 
 		expect(use(TestSchema14)).to.be.deep.equals({
@@ -427,20 +426,19 @@ describe('schema', () => {
 			required: ['myBoolean'],
 			properties: {
 				myBoolean: {
-					type: 'boolean'
-				}
-			}
+					type: 'boolean',
+				},
+			},
 		})
 
 		done()
 	})
 
-	it('optional enum', (done) => {
+	it('schema with optional enums', (done) => {
 		const e = [1, 2, 3]
 		type E = typeof e[number]
 		@schema()
 		class TestSchema15 {
-
 			@enums(e, { required: false })
 			myEnum?: E
 		}
@@ -453,10 +451,125 @@ describe('schema', () => {
 					type: 'array',
 					items: {
 						type: 'number',
-						enum: e
-					}
-				}
-			}
+						enum: e,
+					},
+				},
+			},
+		})
+
+		done()
+	})
+
+	it('schema with inheritance', (done) => {
+		@schema()
+		class TestSchema15Base {
+			@prop()
+			myNumber!: number
+		}
+
+		@schema()
+		class TestSchema15 extends TestSchema15Base {
+			@prop()
+			myString!: string
+		}
+
+		expect(
+			use(TestSchema15Base),
+			'base class should have only own items'
+		).to.be.deep.equals({
+			type: 'object',
+			required: ['myNumber'],
+			properties: {
+				myNumber: {
+					type: 'number',
+				},
+			},
+		})
+
+		expect(
+			use(TestSchema15),
+			'extends have base plus extends'
+		).to.be.deep.equals({
+			type: 'object',
+			required: ['myNumber', 'myString'],
+			properties: {
+				myNumber: {
+					type: 'number',
+				},
+				myString: {
+					type: 'string',
+				},
+			},
+		})
+
+		done()
+	})
+
+	it('schema with inheritance with inheritance', (done) => {
+		@schema()
+		class TestSchema16BaseBase {
+			@prop()
+			myNumber!: number
+		}
+
+		@schema()
+		class TestSchema16Base extends TestSchema16BaseBase {
+			@prop()
+			myString!: string
+		}
+
+		@schema()
+		class TestSchema16 extends TestSchema16Base {
+			@prop()
+			myBoolean!: boolean
+		}
+
+		expect(
+			use(TestSchema16BaseBase),
+			'base class should have only own items'
+		).to.be.deep.equals({
+			type: 'object',
+			required: ['myNumber'],
+			properties: {
+				myNumber: {
+					type: 'number',
+				},
+			},
+		})
+
+		expect(
+			use(TestSchema16Base),
+			'extends have base plus extends'
+		).to.be.deep.equals({
+			type: 'object',
+			required: ['myNumber', 'myString'],
+			properties: {
+				myNumber: {
+					type: 'number',
+				},
+				myString: {
+					type: 'string',
+				},
+			},
+		})
+
+		expect(
+			use(TestSchema16),
+			'extends have base plus extends plus extends'
+		).to.be.deep.equals({
+			type: 'object',
+			required: ['myNumber', 'myString', 'myBoolean'],
+			properties: {
+				myNumber: {
+					type: 'number',
+				},
+				myString: {
+					type: 'string',
+				},
+				myBoolean: {
+					type: 'boolean',
+				},
+			},
 		})
 
 		done()

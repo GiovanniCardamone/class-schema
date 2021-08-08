@@ -30,12 +30,13 @@ also the package `reflect-metadata` is required
 
 > file: tsconfig.json
 
-```json5
+```json
 {
   "compilerOptions": {
     // others config in your project
-    "experimentalDecorators": true, /* Enables experimental support for ES7 decorators. */
-    "emitDecoratorMetadata": true, /* Enables experimental support for emitting type metadata for decorators. */
+    "target": "esnext" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', 'ES2021', or 'ESNEXT'. */,
+    "experimentalDecorators": true /* Enables experimental support for ES7 decorators. */,
+    "emitDecoratorMetadata": true /* Enables experimental support for emitting type metadata for decorators. */
   }
 }
 ```
@@ -62,7 +63,6 @@ class MyObject {
 
 @schema()
 class MySchema {
-
   @prop()
   myProp: number
 
@@ -73,7 +73,6 @@ class MySchema {
   @ref(MyObject)
   myObject: MyObject
 }
-
 ```
 
 > to get javascript object that represent jsonschema of class `use(MySchema)`
@@ -81,45 +80,32 @@ class MySchema {
 ```json5
 // output of `JSON.stringify(use(MySchema))
 {
-  "type": "object",
-  "properties": {
-    "myProp": {
-      "type": "number"
+  type: 'object',
+  properties: {
+    myProp: {
+      type: 'number',
     },
-    "myPropArray": {
-      "type": "array",
-      "items": {
-        "type": "number"
-      }
-    },
-    "myObject": {
-      "type": "object",
-      "properties": {
-        "myEnum": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "a",
-              "e",
-              "i",
-              "o",
-              "u",
-              "y"
-            ]
-          }
-        }
+    myPropArray: {
+      type: 'array',
+      items: {
+        type: 'number',
       },
-      "required": [
-        "myEnum"
-      ]
-    }
+    },
+    myObject: {
+      type: 'object',
+      properties: {
+        myEnum: {
+          type: 'array',
+          items: {
+            type: 'string',
+            enum: ['a', 'e', 'i', 'o', 'u', 'y'],
+          },
+        },
+      },
+      required: ['myEnum'],
+    },
   },
-  "required": [
-    "myProp",
-    "myPropArray",
-    "myObject"
-  ]
+  required: ['myProp', 'myPropArray', 'myObject'],
 }
 ```
 
