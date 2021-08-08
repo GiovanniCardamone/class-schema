@@ -1,3 +1,12 @@
+# [0.5.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.4.4...v0.5.0) (2021-08-04)
+
+
+### Features
+
+* number enum support ([1190f58](https://github.com/GiovanniCardamone/class-schema/commit/1190f58d02701e429c2631e8564634ca90a863d2))
+
+
+
 ## [0.4.4](https://github.com/GiovanniCardamone/class-schema/compare/v0.4.3...v0.4.4) (2021-08-04)
 
 
@@ -56,15 +65,6 @@
 ### Bug Fixes
 
 * exported enums, ref from index ([f8bfeb8](https://github.com/GiovanniCardamone/class-schema/commit/f8bfeb8f99de7b0e817dd00a17e05f43a82778b5))
-
-
-
-# [0.2.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.1.0...v0.2.0) (2021-08-02)
-
-
-### Features
-
-* added date support ([36b582b](https://github.com/GiovanniCardamone/class-schema/commit/36b582b3d1c0b8bfb00156dbe99dc007f30da31a))
 
 
 
