@@ -1,29 +1,55 @@
 import { JSONSchema4 } from 'json-schema'
-import 'reflect-metadata'
 import { buildProperty, getMetadata, wrapSchema } from '../utils'
-import { Prop, SchemaObject } from '../types'
+import { SchemaObject } from '../types'
+import {
+	JsonSchema4Boolean,
+	JsonSchema4Null,
+	JsonSchema4Numeric,
+	JsonSchema4String,
+} from '../jsonschema4'
 
-type FnType = StringConstructor | NumberConstructor | BooleanConstructor
-export function prop(type: FnType, props: Prop): any
-export function prop(type: FnType): any
-export function prop(props: Prop): any
-export function prop(): any
+type OnlySchema<T> = Omit<T, 'type'>
+
+type SchemaProp = OnlySchema<JsonSchema4String>
+
+function prop(): ReturnType<typeof prop>
+
+function prop(
+	type: StringConstructor,
+	prop: { required?: boolean; schema?: JsonSchema4String }
+): ReturnType<typeof prop>
+
+function prop(
+	type: NumberConstructor,
+	prop: { required?: boolean; schema?: JsonSchema4Numeric }
+): ReturnType<typeof prop>
+
+function prop(
+	type: BooleanConstructor,
+	prop: { required?: boolean; schema?: JsonSchema4Boolean }
+): ReturnType<typeof prop>
+
+function prop(prop: {
+	required?: boolean
+	schema?: JsonSchema4String | JsonSchema4Numeric | JsonSchema4Boolean
+}): ReturnType<typeof prop>
 
 /**
  *
  */
-export default function prop(...args: any[]) {
+function prop(...args: any[]) {
 	let required: boolean = true
-	let property: Prop | undefined = undefined
+	let schema: SchemaProp | undefined = undefined
 
-	if (args.length) {
+	if (args?.length) {
 		var type = typeof args[0] === 'function' ? args[0] : undefined
-		if (typeof args[0] !== 'function') {
+
+		if (typeof args[0] !== 'function' && typeof args[0] === 'object') {
 			required = 'required' in args[0] ? args[0].required : required
-			property = 'property' in args[0] ? args[0].property : property
-		} else if (args[1] !== undefined) {
+			schema = 'schema' in args[0] ? args[0].schema : schema
+		} else if (args[1] !== undefined && typeof args[1] === 'object') {
 			required = 'required' in args[1] ? args[1].required : required
-			property = 'property' in args[1] ? args[1].property : property
+			schema = 'schema' in args[1] ? args[1].schema : schema
 		}
 	}
 
@@ -45,7 +71,7 @@ export default function prop(...args: any[]) {
 		// add current prop
 		wrap.properties![name] = buildProperty(
 			type !== undefined ? type.name : meta.name,
-			property?.property
+			schema?.schema
 		)
 
 		if (required) {
@@ -54,3 +80,5 @@ export default function prop(...args: any[]) {
 		}
 	}
 }
+
+export default prop

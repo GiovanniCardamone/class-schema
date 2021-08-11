@@ -574,4 +574,25 @@ describe('schema', () => {
 
 		done()
 	})
+
+	//
+	it('schema with prop with properties', (done) => {
+		@schema()
+		class TestSchema17 {
+			@prop()
+			myNumber!: number
+		}
+
+		expect(use(TestSchema17)).to.deep.contains({
+			type: 'object',
+			required: ['myNumber'],
+			properties: {
+				myNumber: {
+					type: 'number',
+				},
+			},
+		})
+
+		done()
+	})
 })
