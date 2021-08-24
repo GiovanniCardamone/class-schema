@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import 'reflect-metadata'
-import { use, schema, prop, ref, array, enums } from '../src'
+import { use, schema, prop, ref, array, enums, additionalProps } from '../src'
 
 describe('schema', () => {
 	//
@@ -589,6 +589,42 @@ describe('schema', () => {
 			properties: {
 				myNumber: {
 					type: 'number',
+				},
+			},
+		})
+
+		done()
+	})
+
+	//
+	it('schema with additional properties', (done) => {
+		class TestSchema18AdditionalProps {
+			@prop()
+			myNumber!: number
+
+			@prop()
+			myString!: string
+		}
+
+		@schema()
+		class TestSchema18 {
+			@additionalProps(TestSchema18AdditionalProps)
+			myAdditionalProps!: Record<string, TestSchema18AdditionalProps>
+		}
+		expect(use(TestSchema18)).to.deep.contains({
+			type: 'object',
+			required: ['myAdditionalProps'],
+			properties: {
+				myAdditionalProps: {
+					type: 'object',
+					additionalProperties: {
+						myNumber: {
+							type: 'number',
+						},
+						myString: {
+							type: 'string',
+						},
+					},
 				},
 			},
 		})
