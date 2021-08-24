@@ -1,3 +1,12 @@
+## [0.7.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.7.0...v0.7.1) (2021-08-24)
+
+
+### Bug Fixes
+
+* prop ([9e98294](https://github.com/GiovanniCardamone/class-schema/commit/9e98294c0adc1d4822a58c714ccb17d98074f5b4))
+
+
+
 # [0.7.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.6.0...v0.7.0) (2021-08-24)
 
 
@@ -71,10 +80,6 @@
 
 
 ## [0.3.2](https://github.com/GiovanniCardamone/class-schema/compare/v0.3.1...v0.3.2) (2021-08-04)
-
-
-
-## [0.3.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.3.0...v0.3.1) (2021-08-04)
 
 
 
