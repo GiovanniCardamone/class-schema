@@ -21,20 +21,20 @@ function prop(): ReturnType<typeof prop>
 
 function prop(
 	type: StringConstructor,
-	prop: { required?: boolean; schema?: JsonSchema4String }
+	prop?: { required?: boolean; schema?: JsonSchema4String }
 ): any
 
 function prop(
 	type: NumberConstructor,
-	prop: { required?: boolean; schema?: JsonSchema4Numeric }
+	prop?: { required?: boolean; schema?: JsonSchema4Numeric }
 ): any
 
 function prop(
 	type: BooleanConstructor,
-	prop: { required?: boolean; schema?: JsonSchema4Boolean }
+	prop?: { required?: boolean; schema?: JsonSchema4Boolean }
 ): any
 
-function prop(prop: {
+function prop(prop?: {
 	required?: boolean
 	schema?: JsonSchema4String | JsonSchema4Numeric | JsonSchema4Boolean
 }): any
