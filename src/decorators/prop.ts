@@ -77,7 +77,7 @@ function prop(...args: any[]) {
 		wrap.properties![name] = buildProperty(
 			type !== undefined ? type.name : meta.name,
 			schema?.schema
-		)
+		) as JSONSchema4
 
 		if (required) {
 			const r = wrap.required as Array<string>
