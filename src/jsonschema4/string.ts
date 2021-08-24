@@ -1,5 +1,5 @@
 export type JsonSchema4StringFormat =
-	| 'date-tyme'
+	| 'date-time'
 	| 'email'
 	| 'hostname'
 	| 'ipv4'

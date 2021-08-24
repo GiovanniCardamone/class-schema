@@ -1,4 +1,5 @@
 import { JSONSchema4 } from 'json-schema'
+import { SchemaProp } from './decorators/prop'
 
 export interface Ctos {
 	new (...args: any[]): any
@@ -54,7 +55,10 @@ export function getMetadata(target: Ctos, name: string): Meta {
 /**
  *
  */
-export function buildProperty(type: Meta['name'], props?: JSONSchema4) {
+export function buildProperty(
+	type: Meta['name'],
+	props?: SchemaProp['schema']
+) {
 	switch (type) {
 		case 'Number':
 			return composeProperty('number', props)
@@ -63,6 +67,7 @@ export function buildProperty(type: Meta['name'], props?: JSONSchema4) {
 		case 'Boolean':
 			return composeProperty('boolean', props)
 		case 'Date':
+			// @ts-expect-error i dont know why this is not picking the type
 			return composeProperty('string', { ...props, format: 'date-time' })
 		default:
 			console.log({ type })
@@ -72,7 +77,7 @@ export function buildProperty(type: Meta['name'], props?: JSONSchema4) {
 
 export function composeProperty(
 	type: JSONSchema4['type'],
-	props?: JSONSchema4
+	props?: SchemaProp['schema']
 ) {
 	return {
 		type,

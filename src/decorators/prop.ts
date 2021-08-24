@@ -8,31 +8,36 @@ import {
 	JsonSchema4String,
 } from '../jsonschema4'
 
-type OnlySchema<T> = Omit<T, 'type'>
-
-type SchemaProp = OnlySchema<JsonSchema4String>
+export type SchemaProp = {
+	required: boolean
+	schema?:
+		| JsonSchema4String
+		| JsonSchema4Numeric
+		| JsonSchema4Boolean
+		| JsonSchema4Null
+}
 
 function prop(): ReturnType<typeof prop>
 
 function prop(
 	type: StringConstructor,
 	prop: { required?: boolean; schema?: JsonSchema4String }
-): ReturnType<typeof prop>
+): any
 
 function prop(
 	type: NumberConstructor,
 	prop: { required?: boolean; schema?: JsonSchema4Numeric }
-): ReturnType<typeof prop>
+): any
 
 function prop(
 	type: BooleanConstructor,
 	prop: { required?: boolean; schema?: JsonSchema4Boolean }
-): ReturnType<typeof prop>
+): any
 
 function prop(prop: {
 	required?: boolean
 	schema?: JsonSchema4String | JsonSchema4Numeric | JsonSchema4Boolean
-}): ReturnType<typeof prop>
+}): any
 
 /**
  *
