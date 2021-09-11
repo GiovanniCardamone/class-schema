@@ -20,29 +20,32 @@ but, with this library you can extract the schema directly from the class you de
 ## :package: Installation
 
 ```bash
-  npm install class-schema
+npm install class-schema
 ```
-
-## :rocket: Usage
 
 to use `class-schema` you also need the package `reflect-metadata`
 
 ```bash
-  npm install reflect-metadata
+npm install reflect-metadata
 ```
 
-than you need to enable `experimentalDecorators` and `emitDecoratorMetadata` in your `tsconfig.json` if you are using typescript
+## :rocket: Usage
 
-```json
+### TypeScript
+
+You need to enable `experimentalDecorators` and `emitDecoratorMetadata` in your `tsconfig.json`
+
+```json5
+// file: tsconfig.json
 {
-  "compilerOptions": {
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
-  }
+  compilerOptions: {
+    experimentalDecorators: true,
+    emitDecoratorMetadata: true,
+  },
 }
 ```
 
-in the index of your project you have to import `reflect-metadata`
+in your index you have to import `reflect-metadata`
 
 ```typescript
 import 'reflect-metadata'
@@ -53,6 +56,7 @@ and you are ready to go!
 ## :chart_with_upwards_trend: Examples
 
 ```typescript
+import 'reflect-metadata'
 import { use, schema, prop, ref, enums } from 'class-schema'
 
 const vowels = ['a', 'e', 'i', 'o', 'u', 'y']
