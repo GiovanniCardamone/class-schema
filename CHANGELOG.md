@@ -1,3 +1,12 @@
+# [0.8.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.7.1...v0.8.0) (2021-09-11)
+
+
+### Features
+
+* enhancing Library ([fb6fcaa](https://github.com/GiovanniCardamone/class-schema/commit/fb6fcaa1009ed170e023c4dfef1e49f5d7b54356))
+
+
+
 ## [0.7.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.7.0...v0.7.1) (2021-08-24)
 
 
@@ -76,10 +85,6 @@
 ### Features
 
 * adding code coverage ([1e7ceb5](https://github.com/GiovanniCardamone/class-schema/commit/1e7ceb53f1c25b2dc09cd777c08a9e3bde691a08))
-
-
-
-## [0.3.2](https://github.com/GiovanniCardamone/class-schema/compare/v0.3.1...v0.3.2) (2021-08-04)
 
 
 
