@@ -34,6 +34,8 @@ function prop(
 	prop?: { required?: boolean; schema?: JsonSchema4Boolean }
 ): any
 
+function prop(type: DateConstructor, prop?: { required?: boolean }): any
+
 function prop(prop?: {
 	required?: boolean
 	schema?: JsonSchema4String | JsonSchema4Numeric | JsonSchema4Boolean
@@ -43,8 +45,8 @@ function prop(prop?: {
  *
  */
 function prop(...args: any[]) {
-	let required: boolean = true
-	let schema: SchemaProp | undefined = undefined
+	let required: SchemaProp['required'] = true
+	let schema: SchemaProp['schema'] | undefined = undefined
 
 	if (args?.length) {
 		var type = typeof args[0] === 'function' ? args[0] : undefined
@@ -76,12 +78,14 @@ function prop(...args: any[]) {
 		// add current prop
 		wrap.properties![name] = buildProperty(
 			type !== undefined ? type.name : meta.name,
-			schema?.schema
+			schema
 		) as JSONSchema4
 
 		if (required) {
 			const r = wrap.required as Array<string>
-			r.push(name)
+			if (r.includes(name) === false) {
+				r.push(name)
+			}
 		}
 	}
 }

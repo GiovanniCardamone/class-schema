@@ -1,52 +1,56 @@
 # class-schema
 
+![Logo](media/images/banner.png)
+
+<div align="center">
+
+![JavaScript](https://img.shields.io/badge/ES6-Supported-yellow.svg?style=for-the-badge&logo=JavaScript) ![TypeScript](https://img.shields.io/badge/TypeScript-Supported-blue.svg?style=for-the-badge&logo=Typescript)
+
 [![CI](https://github.com/GiovanniCardamone/class-schema/actions/workflows/npm-ci.yml/badge.svg)](https://github.com/GiovanniCardamone/class-schema/actions/workflows/npm-ci.yml)
 [![Coverage Status](https://coveralls.io/repos/github/GiovanniCardamone/class-schema/badge.svg?branch=main)](https://coveralls.io/github/GiovanniCardamone/class-schema?branch=main)
 [![Known Vulnerabilities](https://snyk.io/test/github/GiovanniCardamone/class-schema/badge.svg)](https://snyk.io/test/github/GiovanniCardamone/class-schema)
 [![NPM version](https://img.shields.io/npm/v/class-schema.svg?style=plastic)](https://www.npmjs.com/package/class-schema)
 [![NPM downloads](https://img.shields.io/npm/dm/class-schema.svg?style=plastic)](https://www.npmjs.com/package/class-schema)
 
-Javascript / Typescript utility to convert class into Json Schema
+</div>
 
-## Documentation
+class-schema is a library intended to extract from javascript class, the corrispondent [JSON Schema](https://json-schema.org/), usually, the schema is written by hand or throught some tool that create the schema.
+but, with this library you can extract the schema directly from the class you defined, so you have a single source of truth of the schema [SSOT](https://en.wikipedia.org/wiki/Single_source_of_truth) that is your class.
 
-[Documentation](https://giovannicardam.one/class-schema)
-
-## Installation
+## :package: Installation
 
 ```bash
   npm install class-schema
 ```
 
-also the package `reflect-metadata` is required
+## :rocket: Usage
+
+to use `class-schema` you also need the package `reflect-metadata`
 
 ```bash
   npm install reflect-metadata
 ```
 
-## Usage
-
-`experimentalDecorators` and `emitDecoratorMetadata` flags must be enabled in typescript compiler
-
-> file: tsconfig.json
+than you need to enable `experimentalDecorators` and `emitDecoratorMetadata` in your `tsconfig.json` if you are using typescript
 
 ```json
 {
   "compilerOptions": {
-    // others config in your project
-    "experimentalDecorators": true /* Enables experimental support for ES7 decorators. */,
-    "emitDecoratorMetadata": true /* Enables experimental support for emitting type metadata for decorators. */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   }
 }
 ```
 
-in the index of your project `reflect-metadata` must be imported before any Usage
-
-> file: index.ts
+in the index of your project you have to import `reflect-metadata`
 
 ```typescript
 import 'reflect-metadata'
 ```
+
+and you are ready to go!
+
+## :chart_with_upwards_trend: Examples
 
 ```typescript
 import { use, schema, prop, ref, enums } from 'class-schema'
@@ -108,6 +112,14 @@ class MySchema {
 }
 ```
 
-## License
+## :toolbox: Summary
+
+### :arrow_forward: use
+
+## :books: Documentation
+
+[Full Documentation](https://giovannicardam.one/class-schema)
+
+## :label: License
 
 [MIT](https://github.com/GiovanniCardamone/class-schema/blob/main/LICENSE)

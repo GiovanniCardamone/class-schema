@@ -25,7 +25,10 @@ export function wrapSchema(target: Ctos): CtosSchema['__schema'] {
 	// console.log('parent', target.constructor.__proto__.constructor)
 	const extend = target.constructor.prototype.__proto__.constructor !== Object
 
-	if (extend && 'type' in classSchema.__schema) {
+	if (
+		extend &&
+		(classSchema.__schema === undefined || 'type' in classSchema.__schema)
+	) {
 		classSchema.__schema = {
 			properties: {},
 			required: [],
@@ -70,7 +73,7 @@ export function buildProperty(
 			// @ts-expect-error i dont know why this is not picking the type
 			return composeProperty('string', { ...props, format: 'date-time' })
 		default:
-			console.log({ type })
+			// console.log({ type })
 			return composeProperty('object', props)
 	}
 }

@@ -8,4 +8,6 @@ export interface JsonSchema4Numeric {
 
 	maximum?: number
 	exclusiveMaximum?: number
+
+	default?: number
 }

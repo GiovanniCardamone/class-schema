@@ -24,7 +24,10 @@ export default function additionalProps(
 		// add current prop
 		wrap.properties![name] = {
 			type: 'object',
-			additionalProperties: { ...use(type).properties, required: undefined },
+			additionalProperties: {
+				type: 'object',
+				...use(type),
+			},
 		}
 
 		if (required) {

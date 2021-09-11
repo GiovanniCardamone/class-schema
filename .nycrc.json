@@ -5,7 +5,7 @@
   "include": ["src/**"],
   "statements": 90,
   "branches": 70,
-  "functions": 95,
+  "functions": 60,
   "lines": 90,
   "reporter": ["lcovonly"]
 }

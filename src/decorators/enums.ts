@@ -19,16 +19,20 @@ export default function enums(
 		const wrap = wrapSchema(target)
 
 		wrap.properties![name] = {
-			type: 'array',
-			items: {
-				type: typeof items[0] as 'string' | 'number',
-				enum: items,
-			},
+			enum: items,
+			// type: 'array',
+			// items: {
+			// 	type: typeof items[0] as 'string' | 'number',
+			// 	enum: items,
+			// },
 		}
 
 		if (required) {
 			const r = wrap.required as Array<string>
-			r.push(name)
+
+			if (!r.includes(name)) {
+				r.push(name)
+			}
 		}
 	}
 }

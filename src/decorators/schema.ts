@@ -16,8 +16,10 @@ export default function schema(props?: JSONSchema4) {
 			ctosSchema.__schema = {
 				...ctosSchema.__schema,
 				required: [
-					...(parentSchema.required as string[]),
-					...(ctosSchema.__schema.required as string[]),
+					...new Set([
+						...(parentSchema.required as string[]),
+						...(ctosSchema.__schema.required as string[]),
+					]),
 				],
 				properties: {
 					...parentSchema.properties,

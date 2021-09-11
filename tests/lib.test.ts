@@ -355,11 +355,7 @@ describe('schema', () => {
 			required: ['myEnum'],
 			properties: {
 				myEnum: {
-					type: 'array',
-					items: {
-						type: 'string',
-						enum: ENUM,
-					},
+					enum: ENUM,
 				},
 			},
 		})
@@ -448,11 +444,7 @@ describe('schema', () => {
 			required: [],
 			properties: {
 				myEnum: {
-					type: 'array',
-					items: {
-						type: 'number',
-						enum: e,
-					},
+					enum: e,
 				},
 			},
 		})
@@ -618,11 +610,15 @@ describe('schema', () => {
 				myAdditionalProps: {
 					type: 'object',
 					additionalProperties: {
-						myNumber: {
-							type: 'number',
-						},
-						myString: {
-							type: 'string',
+						type: 'object',
+						required: ['myNumber', 'myString'],
+						properties: {
+							myNumber: {
+								type: 'number',
+							},
+							myString: {
+								type: 'string',
+							},
 						},
 					},
 				},
