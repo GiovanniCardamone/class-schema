@@ -1,6 +1,6 @@
 {
   "name": "class-schema",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Javascript / Typescript class to JsonSchema",
   "main": "dist/index.js",
   "private": false,
