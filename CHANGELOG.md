@@ -1,3 +1,7 @@
+## [0.8.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.8.0...v0.8.1) (2021-09-11)
+
+
+
 # [0.8.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.7.1...v0.8.0) (2021-09-11)
 
 
@@ -76,15 +80,6 @@
 ### Bug Fixes
 
 * fix docs command ([cbefc79](https://github.com/GiovanniCardamone/class-schema/commit/cbefc79b2043696cdc9ca5e81ec14c058d451d38))
-
-
-
-# [0.4.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.3.2...v0.4.0) (2021-08-04)
-
-
-### Features
-
-* adding code coverage ([1e7ceb5](https://github.com/GiovanniCardamone/class-schema/commit/1e7ceb53f1c25b2dc09cd777c08a9e3bde691a08))
 
 
 
