@@ -1,3 +1,7 @@
+## [0.8.3](https://github.com/GiovanniCardamone/class-schema/compare/v0.8.2...v0.8.3) (2021-10-14)
+
+
+
 ## [0.8.2](https://github.com/GiovanniCardamone/class-schema/compare/v0.8.1...v0.8.2) (2021-09-11)
 
 
@@ -66,15 +70,6 @@
 
 
 ## [0.4.3](https://github.com/GiovanniCardamone/class-schema/compare/v0.4.2...v0.4.3) (2021-08-04)
-
-
-
-## [0.4.2](https://github.com/GiovanniCardamone/class-schema/compare/v0.4.1...v0.4.2) (2021-08-04)
-
-
-### Bug Fixes
-
-* fix .npmignore ([f55e470](https://github.com/GiovanniCardamone/class-schema/commit/f55e470d5821780a1873fdc7736a8403d02e4d78))
 
 
 
