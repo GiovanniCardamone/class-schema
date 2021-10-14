@@ -31,6 +31,14 @@ npm install reflect-metadata
 
 ## :rocket: Usage
 
+### Javascript
+
+In order to use decorators in javascript, a transpiler that can
+
+```bash
+npm i -D babel-cli
+```
+
 ### TypeScript
 
 You need to enable `experimentalDecorators` and `emitDecoratorMetadata` in your `tsconfig.json`
