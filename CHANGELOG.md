@@ -1,3 +1,12 @@
+# [0.9.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.8.3...v0.9.0) (2021-11-08)
+
+
+### Features
+
+* of use additionalProps enums ref ([a466a21](https://github.com/GiovanniCardamone/class-schema/commit/a466a210e7e845db5c6001ee6e6e8c3716006808))
+
+
+
 ## [0.8.3](https://github.com/GiovanniCardamone/class-schema/compare/v0.8.2...v0.8.3) (2021-10-14)
 
 
@@ -66,10 +75,6 @@
 
 
 ## [0.4.4](https://github.com/GiovanniCardamone/class-schema/compare/v0.4.3...v0.4.4) (2021-08-04)
-
-
-
-## [0.4.3](https://github.com/GiovanniCardamone/class-schema/compare/v0.4.2...v0.4.3) (2021-08-04)
 
 
 
