@@ -9,7 +9,6 @@ on:
       - '*.md'
 
 jobs:
-
   # build / test
   Build:
     name: Build Package
@@ -26,11 +25,11 @@ jobs:
       # Install Dependencies
       - run: npm ci
 
-      # Build Package
-      - run: npm run build
-
       # Run Tests
       - run: npm test
+
+      # Build Package
+      - run: npm run build
 
       # Report Coverage
       - name: Coveralls GitHub Action
@@ -77,5 +76,3 @@ jobs:
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
-
-

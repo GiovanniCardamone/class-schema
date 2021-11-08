@@ -627,4 +627,8 @@ describe('schema', () => {
 
 		done()
 	})
+
+	it('allof', (done) => {
+		done()
+	})
 })

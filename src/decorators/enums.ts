@@ -5,7 +5,7 @@ import { wrapSchema } from '../utils'
  *
  */
 export default function enums(
-	items: Array<string | number>,
+	items: Array<string | number> | Readonly<Array<string | number>>,
 	{ required, property }: Prop | undefined = {
 		required: true,
 		property: undefined,
@@ -19,7 +19,7 @@ export default function enums(
 		const wrap = wrapSchema(target)
 
 		wrap.properties![name] = {
-			enum: items,
+			enum: items as Array<string | number>,
 			// type: 'array',
 			// items: {
 			// 	type: typeof items[0] as 'string' | 'number',

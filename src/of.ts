@@ -1,5 +1,5 @@
 import { JSONSchema4 } from 'json-schema'
-import use from './use'
+import { use } from './use'
 import { Ctos } from './utils'
 
 export type OfType = {

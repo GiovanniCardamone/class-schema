@@ -1,7 +1,7 @@
 import 'reflect-metadata'
 import { Ctos } from './utils'
 
-export { default as use } from './use'
+export * from './use'
 export * from './decorators'
 export * from './of'
 

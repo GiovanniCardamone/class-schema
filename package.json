@@ -9,7 +9,8 @@
     "extends": "@giovannicardamone/eslint-config"
   },
   "scripts": {
-    "test": "nyc ts-mocha 'tests/**.test.ts'",
+    "test": "ts-mocha 'tests/**.test.ts'",
+    "cover": "nyc npm run test",
     "lint": "eslint",
     "build:watch": "tsc --watch",
     "build": "tsc",

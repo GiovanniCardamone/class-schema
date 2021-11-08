@@ -1,7 +1,7 @@
 import { Prop, SchemaObject } from '../types'
 import { wrapSchema } from '../utils'
 
-import use from '../use'
+import { use } from '../use'
 
 /**
  *
