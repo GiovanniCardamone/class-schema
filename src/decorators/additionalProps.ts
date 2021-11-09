@@ -1,33 +1,42 @@
 import { Prop, SchemaObject } from '../types'
-import { wrapSchema } from '../utils'
+import { buildProperty, isProperty, wrapSchema } from '../utils'
 
 import { use } from '../use'
+import { ValidConstructor } from './prop'
+import { JSONSchema4 } from 'json-schema'
 
 /**
  *
  */
 export default function additionalProps(
-	type: SchemaObject,
+	type: SchemaObject | ValidConstructor,
 	{ required, property }: Prop | undefined = {
 		required: true,
 		property: undefined,
 	}
 ) {
 	return function (
-		target: SchemaObject,
+		target: SchemaObject | ValidConstructor,
 		name: string
 		// descriptor: PropertyDescriptor
 	): void {
 		const wrap = wrapSchema(target)
-		// const meta = getMetadata(target, name)
 
-		// add current prop
-		wrap.properties![name] = {
-			type: 'object',
-			additionalProperties: {
+		if (isProperty(type?.name)) {
+			wrap.properties![name] = {
 				type: 'object',
-				...use(type),
-			},
+				additionalProperties: buildProperty(type.name) as JSONSchema4,
+			}
+
+			//
+		} else {
+			wrap.properties![name] = {
+				type: 'object',
+				additionalProperties: {
+					type: 'object',
+					...use(type),
+				},
+			}
 		}
 
 		if (required) {

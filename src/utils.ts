@@ -55,6 +55,10 @@ export function getMetadata(target: Ctos, name: string): Meta {
 	}
 }
 
+export function isProperty(type: string) {
+	return ['Number', 'String', 'Boolean', 'Date'].includes(type)
+}
+
 /**
  *
  */

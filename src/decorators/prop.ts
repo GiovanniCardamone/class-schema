@@ -17,6 +17,12 @@ export type SchemaProp = {
 		| JsonSchema4Null
 }
 
+export type ValidConstructor =
+	| StringConstructor
+	| NumberConstructor
+	| BooleanConstructor
+	| DateConstructor
+
 function prop(): ReturnType<typeof prop>
 
 function prop(

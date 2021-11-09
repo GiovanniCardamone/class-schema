@@ -6,8 +6,14 @@
       "type": "npm",
       "script": "build:watch",
       "group": "build",
-      "problemMatcher": [],
-      "detail": "tsc --watch"
+      "problemMatcher": []
+    },
+    {
+      "label": "f2",
+      "type": "npm",
+      "script": "test",
+      "group": "test",
+      "problemMatcher": []
     }
   ]
 }

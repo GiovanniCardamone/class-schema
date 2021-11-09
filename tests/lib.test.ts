@@ -4,17 +4,15 @@ import { use, schema, prop, ref, array, enums, additionalProps } from '../src'
 
 describe('schema', () => {
 	//
-	it('use non-schema class => must throw TypeError', (done) => {
+	it('use non-schema class => must throw TypeError', async () => {
 		expect(() => {
 			class TestSchema0 {}
 			use(TestSchema0)
 		}).to.throw(TypeError)
-
-		done()
 	})
 
 	//
-	it('schema with title', (done) => {
+	it('schema with title', async () => {
 		@schema({ title: 'TestSchema1' })
 		class TestSchema1 {}
 
@@ -22,12 +20,10 @@ describe('schema', () => {
 			type: 'object',
 			title: 'TestSchema1',
 		})
-
-		done()
 	})
 
 	//
-	it('schema with prop', (done) => {
+	it('schema with prop', async () => {
 		@schema()
 		class TestSchema2 {
 			@prop()
@@ -43,12 +39,10 @@ describe('schema', () => {
 				},
 			},
 		})
-
-		done()
 	})
 
 	//
-	it('schema with optional prop', (done) => {
+	it('schema with optional prop', async () => {
 		@schema()
 		class TestSchema3 {
 			@prop({ required: false })
@@ -64,12 +58,10 @@ describe('schema', () => {
 				},
 			},
 		})
-
-		done()
 	})
 
 	//
-	it('schema with multiple prop', (done) => {
+	it('schema with multiple prop', async () => {
 		@schema()
 		class TestSchema4 {
 			@prop({ required: false })
@@ -91,12 +83,10 @@ describe('schema', () => {
 				},
 			},
 		})
-
-		done()
 	})
 
 	//
-	it('schema with ref', (done) => {
+	it('schema with ref', async () => {
 		@schema()
 		class TestSchema5Nested {
 			@prop({ required: false })
@@ -145,12 +135,10 @@ describe('schema', () => {
 				},
 			},
 		})
-
-		done()
 	})
 
 	//
-	it('schema with ref with ref', (done) => {
+	it('schema with ref with ref', async () => {
 		@schema()
 		class TestSchema6NestedNested {
 			@prop({ required: false })
@@ -196,12 +184,10 @@ describe('schema', () => {
 				},
 			},
 		})
-
-		done()
 	})
 
 	//
-	it('schema with array ref', (done) => {
+	it('schema with array ref', async () => {
 		@schema()
 		class TestSchema7Nested {
 			@prop({ required: false })
@@ -239,11 +225,10 @@ describe('schema', () => {
 				},
 			},
 		})
-		done()
 	})
 
 	//
-	it('schema with ref with array props', (done) => {
+	it('schema with ref with array props', async () => {
 		@schema()
 		class TestSchema8Nested {
 			@array()
@@ -281,12 +266,10 @@ describe('schema', () => {
 				},
 			},
 		})
-
-		done()
 	})
 
 	//
-	it('schema with ref with array ref', (done) => {
+	it('schema with ref with array ref', async () => {
 		@schema()
 		class TestSchema9NestedNested {
 			@prop({ required: false })
@@ -336,12 +319,10 @@ describe('schema', () => {
 				},
 			},
 		})
-
-		done()
 	})
 
 	//
-	it('schema with enums', (done) => {
+	it('schema with enums', async () => {
 		const ENUM = ['a', 'b', 'c'] // value
 		type ENUM_T = typeof ENUM[number] // type
 		@schema()
@@ -359,12 +340,10 @@ describe('schema', () => {
 				},
 			},
 		})
-
-		done()
 	})
 
 	//
-	it('schema with prop (date)', (done) => {
+	it('schema with prop (date)', async () => {
 		@schema()
 		class TestSchema11 {
 			@prop()
@@ -381,11 +360,9 @@ describe('schema', () => {
 				},
 			},
 		})
-
-		done()
 	})
 
-	it('schema with prop array without type => must throw TypeError', (done) => {
+	it('schema with prop array without type => must throw TypeError', async () => {
 		expect(() => {
 			@schema()
 			class TestSchema12 {
@@ -394,11 +371,9 @@ describe('schema', () => {
 				myNumberArray!: number[]
 			}
 		}).to.throw(TypeError)
-
-		done()
 	})
 
-	it('schema with array without prop => must thriw TypeError', (done) => {
+	it('schema with array without prop => must thriw TypeError', async () => {
 		expect(() => {
 			@schema()
 			class TestSchema13 {
@@ -406,11 +381,9 @@ describe('schema', () => {
 				myNumberArray!: number[]
 			}
 		}).to.throw(TypeError)
-
-		done()
 	})
 
-	it('schema with prop (boolean)', (done) => {
+	it('schema with prop (boolean)', async () => {
 		@schema()
 		class TestSchema14 {
 			@prop()
@@ -426,11 +399,9 @@ describe('schema', () => {
 				},
 			},
 		})
-
-		done()
 	})
 
-	it('schema with optional enums', (done) => {
+	it('schema with optional enums', async () => {
 		const e = [1, 2, 3]
 		type E = typeof e[number]
 		@schema()
@@ -448,11 +419,9 @@ describe('schema', () => {
 				},
 			},
 		})
-
-		done()
 	})
 
-	it('schema with inheritance', (done) => {
+	it('schema with inheritance', async () => {
 		@schema()
 		class TestSchema15Base {
 			@prop()
@@ -493,11 +462,9 @@ describe('schema', () => {
 				},
 			},
 		})
-
-		done()
 	})
 
-	it('schema with inheritance with inheritance', (done) => {
+	it('schema with inheritance with inheritance', async () => {
 		@schema()
 		class TestSchema16BaseBase {
 			@prop()
@@ -563,12 +530,10 @@ describe('schema', () => {
 				},
 			},
 		})
-
-		done()
 	})
 
 	//
-	it('schema with prop with properties', (done) => {
+	it('schema with prop with properties', async () => {
 		@schema()
 		class TestSchema17 {
 			@prop()
@@ -584,12 +549,10 @@ describe('schema', () => {
 				},
 			},
 		})
-
-		done()
 	})
 
 	//
-	it('schema with additional properties', (done) => {
+	it('schema with additional properties', async () => {
 		class TestSchema18AdditionalProps {
 			@prop()
 			myNumber!: number
@@ -624,11 +587,27 @@ describe('schema', () => {
 				},
 			},
 		})
-
-		done()
 	})
 
-	it('allof', (done) => {
-		done()
+	it('schema with additional properties value', async () => {
+		@schema()
+		class TestSchema19 {
+			@additionalProps(Number)
+			myAdditionalProps!: Record<string, number>
+		}
+		expect(use(TestSchema19)).to.deep.contains({
+			type: 'object',
+			required: ['myAdditionalProps'],
+			properties: {
+				myAdditionalProps: {
+					type: 'object',
+					additionalProperties: {
+						type: 'number',
+					},
+				},
+			},
+		})
 	})
+
+	it('allof', async () => {})
 })
