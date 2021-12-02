@@ -1,3 +1,12 @@
+## [0.9.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.9.0...v0.9.1) (2021-11-09)
+
+
+### Bug Fixes
+
+* additional props base types ([32131dd](https://github.com/GiovanniCardamone/class-schema/commit/32131dda1734070d3f73e4410f990771035cc7c2))
+
+
+
 # [0.9.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.8.3...v0.9.0) (2021-11-08)
 
 
@@ -71,10 +80,6 @@
 ### Features
 
 * number enum support ([1190f58](https://github.com/GiovanniCardamone/class-schema/commit/1190f58d02701e429c2631e8564634ca90a863d2))
-
-
-
-## [0.4.4](https://github.com/GiovanniCardamone/class-schema/compare/v0.4.3...v0.4.4) (2021-08-04)
 
 
 
