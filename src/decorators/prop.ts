@@ -42,10 +42,10 @@ function prop(
 
 function prop(type: DateConstructor, prop?: { required?: boolean }): any
 
-function prop(prop?: {
-	required?: boolean
-	schema?: JsonSchema4String | JsonSchema4Numeric | JsonSchema4Boolean
-}): any
+// function prop(prop?: {
+// 	required?: boolean
+// 	schema?: JsonSchema4String | JsonSchema4Numeric | JsonSchema4Boolean
+// }): any
 
 /**
  *

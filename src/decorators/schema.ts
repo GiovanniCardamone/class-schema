@@ -1,7 +1,11 @@
 import { JSONSchema4 } from 'json-schema'
 import { Ctos, CtosSchema } from '../utils'
 
-export default function schema(props?: JSONSchema4) {
+interface Additional {
+	examples: Record<string, any>
+}
+
+export default function schema(props?: JSONSchema4, additional?: Additional) {
 	return function <T extends Ctos>(constructor: T): void {
 		const ctosSchema = constructor as unknown as CtosSchema
 		const parentSchema = ctosSchema?.__proto__?.__schema

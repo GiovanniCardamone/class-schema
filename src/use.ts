@@ -5,7 +5,11 @@ import { Ctos, CtosSchema } from './utils'
 export function use(
 	constructor: Ctos | ValidConstructor
 ): Partial<JSONSchema4> {
-	const ctoschema = constructor as unknown as CtosSchema
+	const ctoschema: CtosSchema | undefined = constructor as unknown as CtosSchema
+
+	if (ctoschema === undefined) {
+		throw new Error(`undefined schema for ${constructor}`)
+	}
 
 	if ('__schema' in ctoschema === false) {
 		throw new TypeError(`${ctoschema.name}: not a schema class`)
@@ -14,7 +18,9 @@ export function use(
 	return JSON.parse(JSON.stringify(ctoschema.__schema))
 }
 
-export function useArray(constructor: Ctos): Partial<JSONSchema4> {
+export function useArray(
+	constructor: Ctos | ValidConstructor
+): Partial<JSONSchema4> {
 	const ctoschema = constructor as unknown as CtosSchema
 
 	if ('__schema' in ctoschema === false) {
