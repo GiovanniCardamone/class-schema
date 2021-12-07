@@ -1,3 +1,12 @@
+## [0.10.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.10.0...v0.10.1) (2021-12-07)
+
+
+### Bug Fixes
+
+* package.json & package-lock.json to reduce vulnerabilities ([2bc7a86](https://github.com/GiovanniCardamone/class-schema/commit/2bc7a86882109aa06653f00eb12f8b2bc4c9a3ac))
+
+
+
 # [0.10.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.9.1...v0.10.0) (2021-12-02)
 
 
@@ -66,20 +75,6 @@
 ### Features
 
 * additionalProperties ([612302e](https://github.com/GiovanniCardamone/class-schema/commit/612302ebecea42c6b0504a929e1ed85d465f893c))
-
-
-
-# [0.6.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.5.0...v0.6.0) (2021-08-08)
-
-
-### Bug Fixes
-
-* type annotation parentSchema ([71bd739](https://github.com/GiovanniCardamone/class-schema/commit/71bd739c32d139a9d51368979913cd6b9a4e9183))
-
-
-### Features
-
-* extends inheritanche props ([7678d3b](https://github.com/GiovanniCardamone/class-schema/commit/7678d3bb43cbc640b5c2cae5fdb44503c62f0b16))
 
 
 
