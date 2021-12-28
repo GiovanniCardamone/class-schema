@@ -8,12 +8,16 @@ import {
 	JsonSchema4String,
 } from '../jsonschema4'
 
+export type AnyProp = {
+	[key: string]: any
+}
+
 export type SchemaProp = {
 	required: boolean
 	schema?:
-		| JsonSchema4String
-		| JsonSchema4Numeric
-		| JsonSchema4Boolean
+		| (JsonSchema4String & AnyProp)
+		| (JsonSchema4Numeric & AnyProp)
+		| (JsonSchema4Boolean & AnyProp)
 		| JsonSchema4Null
 }
 
@@ -27,20 +31,23 @@ function prop(): ReturnType<typeof prop>
 
 function prop(
 	type: StringConstructor,
-	prop?: { required?: boolean; schema?: JsonSchema4String }
+	prop?: { required?: boolean; schema?: JsonSchema4String & AnyProp }
 ): any
 
 function prop(
 	type: NumberConstructor,
-	prop?: { required?: boolean; schema?: JsonSchema4Numeric }
+	prop?: { required?: boolean; schema?: JsonSchema4Numeric & AnyProp }
 ): any
 
 function prop(
 	type: BooleanConstructor,
-	prop?: { required?: boolean; schema?: JsonSchema4Boolean }
+	prop?: { required?: boolean; schema?: JsonSchema4Boolean & AnyProp }
 ): any
 
-function prop(type: DateConstructor, prop?: { required?: boolean }): any
+function prop(
+	type: DateConstructor,
+	prop?: { required?: boolean; schema?: AnyProp }
+): any
 
 // function prop(prop?: {
 // 	required?: boolean

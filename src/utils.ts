@@ -1,5 +1,6 @@
 import { JSONSchema4 } from 'json-schema'
-import { SchemaProp } from './decorators/prop'
+import { AnyProp, SchemaProp } from './decorators/prop'
+import { JsonSchema4String } from './jsonschema4'
 
 export interface Ctos {
 	new (...args: any[]): any
@@ -74,10 +75,12 @@ export function buildProperty(
 		case 'Boolean':
 			return composeProperty('boolean', props)
 		case 'Date':
-			// @ts-expect-error i dont know why this is not picking the type
-			return composeProperty('string', { ...props, format: 'date-time' })
+			return composeProperty('string', {
+				...props,
+				format: 'date-time',
+				datetime: 'ISO8601',
+			} as JsonSchema4String & AnyProp)
 		default:
-			// console.log({ type })
 			return composeProperty('object', props)
 	}
 }

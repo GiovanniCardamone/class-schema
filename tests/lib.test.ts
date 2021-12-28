@@ -357,6 +357,7 @@ describe('schema', () => {
 				myDate: {
 					type: 'string',
 					format: 'date-time',
+					datetime: 'ISO8601',
 				},
 			},
 		})
