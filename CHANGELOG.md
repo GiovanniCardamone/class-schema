@@ -1,3 +1,12 @@
+# [0.12.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.11.0...v0.12.0) (2022-01-13)
+
+
+### Features
+
+* es5 support ([61cf090](https://github.com/GiovanniCardamone/class-schema/commit/61cf090b0b79055c751147f7c5bf4fdb93336b3d))
+
+
+
 # [0.11.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.10.1...v0.11.0) (2021-12-28)
 
 
@@ -61,15 +70,6 @@
 ### Features
 
 * enhancing Library ([fb6fcaa](https://github.com/GiovanniCardamone/class-schema/commit/fb6fcaa1009ed170e023c4dfef1e49f5d7b54356))
-
-
-
-## [0.7.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.7.0...v0.7.1) (2021-08-24)
-
-
-### Bug Fixes
-
-* prop ([9e98294](https://github.com/GiovanniCardamone/class-schema/commit/9e98294c0adc1d4822a58c714ccb17d98074f5b4))
 
 
 
