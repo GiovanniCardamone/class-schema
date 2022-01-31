@@ -19,4 +19,6 @@ export interface JsonSchema4String {
 	enum?: string[]
 
 	default?: string
+
+	description?: string
 }
