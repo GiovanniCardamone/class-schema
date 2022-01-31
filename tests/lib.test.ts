@@ -1,6 +1,15 @@
 import { expect } from 'chai'
 import 'reflect-metadata'
-import { use, schema, prop, ref, array, enums, additionalProps } from '../src'
+import {
+	use,
+	schema,
+	prop,
+	ref,
+	array,
+	enums,
+	additionalProps,
+	anyOf,
+} from '../src'
 
 describe('schema', () => {
 	//
@@ -610,5 +619,43 @@ describe('schema', () => {
 		})
 	})
 
-	it('allof', async () => {})
+	it('schema with value as nullable', async () => {
+		@schema()
+		class TestSchema20 {
+			@prop(String, { required: true, nullable: true })
+			value!: string | null
+		}
+
+		// console.log({ TestSchema20: JSON.stringify(use(TestSchema20), null, 4) })
+
+		expect(use(TestSchema20)).to.deep.contains({
+			type: 'object',
+			properties: {
+				value: {
+					anyOf: [{ type: 'string' }, { type: 'null' }],
+				},
+			},
+			required: ['value'],
+		})
+	})
+
+	it('schema with value as nullable optional', async () => {
+		@schema()
+		class TestSchema21 {
+			@prop(String, { nullable: true, required: false })
+			value!: string | null
+		}
+
+		// console.log({ TestSchema21: JSON.stringify(use(TestSchema21), null, 4) })
+
+		expect(use(TestSchema21)).to.deep.contains({
+			type: 'object',
+			properties: {
+				value: {
+					anyOf: [{ type: 'string' }, { type: 'null' }],
+				},
+			},
+			required: [],
+		})
+	})
 })

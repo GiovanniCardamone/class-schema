@@ -14,6 +14,7 @@ export type AnyProp = {
 
 export type SchemaProp = {
 	required: boolean
+	nullable: boolean
 	schema?:
 		| (JsonSchema4String & AnyProp)
 		| (JsonSchema4Numeric & AnyProp)
@@ -31,22 +32,34 @@ function prop(): ReturnType<typeof prop>
 
 function prop(
 	type: StringConstructor,
-	prop?: { required?: boolean; schema?: JsonSchema4String & AnyProp }
+	prop?: {
+		required?: boolean
+		nullable?: boolean
+		schema?: JsonSchema4String & AnyProp
+	}
 ): any
 
 function prop(
 	type: NumberConstructor,
-	prop?: { required?: boolean; schema?: JsonSchema4Numeric & AnyProp }
+	prop?: {
+		required?: boolean
+		nullable?: boolean
+		schema?: JsonSchema4Numeric & AnyProp
+	}
 ): any
 
 function prop(
 	type: BooleanConstructor,
-	prop?: { required?: boolean; schema?: JsonSchema4Boolean & AnyProp }
+	prop?: {
+		required?: boolean
+		nullable?: boolean
+		schema?: JsonSchema4Boolean & AnyProp
+	}
 ): any
 
 function prop(
 	type: DateConstructor,
-	prop?: { required?: boolean; schema?: AnyProp }
+	prop?: { required?: boolean; nullable?: boolean; schema?: AnyProp }
 ): any
 
 // function prop(prop?: {
@@ -59,6 +72,7 @@ function prop(
  */
 function prop(...args: any[]) {
 	let required: SchemaProp['required'] = true
+	let nullable: SchemaProp['nullable'] = false
 	let schema: SchemaProp['schema'] | undefined = undefined
 
 	if (args?.length) {
@@ -66,9 +80,11 @@ function prop(...args: any[]) {
 
 		if (typeof args[0] !== 'function' && typeof args[0] === 'object') {
 			required = 'required' in args[0] ? args[0].required : required
+			nullable = 'nullable' in args[0] ? args[0].nullable : nullable
 			schema = 'schema' in args[0] ? args[0].schema : schema
 		} else if (args[1] !== undefined && typeof args[1] === 'object') {
 			required = 'required' in args[1] ? args[1].required : required
+			nullable = 'nullable' in args[1] ? args[1].nullable : nullable
 			schema = 'schema' in args[1] ? args[1].schema : schema
 		}
 	}
@@ -88,11 +104,23 @@ function prop(...args: any[]) {
 			)
 		}
 
-		// add current prop
-		wrap.properties![name] = buildProperty(
-			type !== undefined ? type.name : meta.name,
-			schema
-		) as JSONSchema4
+		if (nullable) {
+			wrap.properties![name] = {
+				anyOf: [
+					buildProperty(
+						type !== undefined ? type.name : meta.name,
+						schema
+					) as JSONSchema4,
+					{ type: 'null' },
+				],
+			}
+		} else {
+			// add current prop
+			wrap.properties![name] = buildProperty(
+				type !== undefined ? type.name : meta.name,
+				schema
+			) as JSONSchema4
+		}
 
 		if (required) {
 			const r = wrap.required as Array<string>
