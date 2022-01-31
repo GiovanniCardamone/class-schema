@@ -691,4 +691,41 @@ describe('schema', () => {
 			required: ['value'],
 		})
 	})
+
+	it('schema with value as array ref and nullable', async () => {
+		@schema()
+		class TestSchema23Ref {
+			@prop()
+			val!: string
+		}
+
+		@schema()
+		class TestSchema23 {
+			@array({ nullable: true })
+			@ref(TestSchema23Ref)
+			value!: TestSchema23Ref | null
+		}
+
+		// console.log({ TestSchema23: JSON.stringify(use(TestSchema23), null, 4) })
+
+		expect(use(TestSchema23)).to.deep.contains({
+			type: 'object',
+			properties: {
+				value: {
+					anyOf: [
+						{
+							type: 'array',
+							items: {
+								type: 'object',
+								properties: { val: { type: 'string' } },
+								required: ['val'],
+							},
+						},
+						{ type: 'null' },
+					],
+				},
+			},
+			required: ['value'],
+		})
+	})
 })

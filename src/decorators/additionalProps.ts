@@ -1,4 +1,4 @@
-import { Prop, SchemaObject } from '../types'
+import { UtilsProp, SchemaObject } from '../types'
 import { buildProperty, isProperty, wrapSchema } from '../utils'
 
 import { use } from '../use'
@@ -10,9 +10,8 @@ import { JSONSchema4 } from 'json-schema'
  */
 export default function additionalProps(
 	type: SchemaObject | ValidConstructor,
-	{ required, property }: Prop | undefined = {
+	{ required }: UtilsProp | undefined = {
 		required: true,
-		property: undefined,
 	}
 ) {
 	return function (

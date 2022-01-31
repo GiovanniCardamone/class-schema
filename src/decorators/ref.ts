@@ -1,4 +1,4 @@
-import { Prop, SchemaObject } from '../types'
+import { UtilsProp, SchemaObject } from '../types'
 import { wrapSchema } from '../utils'
 
 import { use } from '../use'
@@ -8,10 +8,9 @@ import { use } from '../use'
  */
 export default function ref(
 	type: SchemaObject,
-	{ required, nullable, property }: Prop | undefined = {
+	{ required, nullable }: UtilsProp | undefined = {
 		required: true,
 		nullable: false,
-		property: undefined,
 	}
 ) {
 	return function (
