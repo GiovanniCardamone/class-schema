@@ -1,3 +1,12 @@
+# [0.14.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.13.0...v0.14.0) (2022-01-31)
+
+
+### Features
+
+* added nullable option for ref to combine type and null ([eafec5f](https://github.com/GiovanniCardamone/class-schema/commit/eafec5f50acc85c6047948feea8865b5d8a2513c))
+
+
+
 # [0.13.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.12.3...v0.13.0) (2022-01-31)
 
 
@@ -76,15 +85,6 @@
 ### Bug Fixes
 
 * additional props base types ([32131dd](https://github.com/GiovanniCardamone/class-schema/commit/32131dda1734070d3f73e4410f990771035cc7c2))
-
-
-
-# [0.9.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.8.3...v0.9.0) (2021-11-08)
-
-
-### Features
-
-* of use additionalProps enums ref ([a466a21](https://github.com/GiovanniCardamone/class-schema/commit/a466a210e7e845db5c6001ee6e6e8c3716006808))
 
 
 
