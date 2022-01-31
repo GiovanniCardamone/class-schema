@@ -1,3 +1,12 @@
+# [0.15.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.14.0...v0.15.0) (2022-01-31)
+
+
+### Features
+
+* added description props ([a193538](https://github.com/GiovanniCardamone/class-schema/commit/a193538606b62706a5c06a2fe879deceb2b7bbcf))
+
+
+
 # [0.14.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.13.0...v0.14.0) (2022-01-31)
 
 
@@ -76,15 +85,6 @@
 ### Features
 
 * image decoder ([3689fdb](https://github.com/GiovanniCardamone/class-schema/commit/3689fdb39dfa0f7c4170d1878d58c256af2770a8))
-
-
-
-## [0.9.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.9.0...v0.9.1) (2021-11-09)
-
-
-### Bug Fixes
-
-* additional props base types ([32131dd](https://github.com/GiovanniCardamone/class-schema/commit/32131dda1734070d3f73e4410f990771035cc7c2))
 
 
 
