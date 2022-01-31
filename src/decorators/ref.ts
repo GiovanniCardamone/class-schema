@@ -8,8 +8,9 @@ import { use } from '../use'
  */
 export default function ref(
 	type: SchemaObject,
-	{ required, property }: Prop | undefined = {
+	{ required, nullable, property }: Prop | undefined = {
 		required: true,
+		nullable: false,
 		property: undefined,
 	}
 ) {
@@ -21,8 +22,17 @@ export default function ref(
 		const wrap = wrapSchema(target)
 		// const meta = getMetadata(target, name)
 
-		// add current prop
-		wrap.properties![name] = use(type)
+		required = required !== undefined ? required : true
+		nullable = nullable !== undefined ? nullable : false
+
+		if (nullable) {
+			wrap.properties![name] = {
+				anyOf: [use(type), { type: 'null' }],
+			}
+		} else {
+			// add current prop
+			wrap.properties![name] = use(type)
+		}
 
 		if (required) {
 			const r = wrap.required as Array<string>

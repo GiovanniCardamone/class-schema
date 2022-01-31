@@ -4,5 +4,6 @@ export type SchemaObject = any
 
 export interface Prop {
 	required?: boolean
+	nullable?: boolean
 	property?: JSONSchema4
 }
