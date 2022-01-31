@@ -1,3 +1,12 @@
+## [0.12.2](https://github.com/GiovanniCardamone/class-schema/compare/v0.12.1...v0.12.2) (2022-01-31)
+
+
+### Bug Fixes
+
+* added default prop to Json4SchemaBoolean ([b8d31a8](https://github.com/GiovanniCardamone/class-schema/commit/b8d31a884fc0987ad1cdfdae133c07caafaf9bea))
+
+
+
 ## [0.12.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.12.0...v0.12.1) (2022-01-31)
 
 
@@ -66,10 +75,6 @@
 
 
 ## [0.8.2](https://github.com/GiovanniCardamone/class-schema/compare/v0.8.1...v0.8.2) (2021-09-11)
-
-
-
-## [0.8.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.8.0...v0.8.1) (2021-09-11)
 
 
 
