@@ -1,3 +1,12 @@
+## [0.12.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.12.0...v0.12.1) (2022-01-31)
+
+
+### Bug Fixes
+
+* added enum prop to Json4SchemaString ([94a962c](https://github.com/GiovanniCardamone/class-schema/commit/94a962cebc73af58c412ed2d35083b93335d615e))
+
+
+
 # [0.12.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.11.0...v0.12.0) (2022-01-13)
 
 
@@ -61,15 +70,6 @@
 
 
 ## [0.8.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.8.0...v0.8.1) (2021-09-11)
-
-
-
-# [0.8.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.7.1...v0.8.0) (2021-09-11)
-
-
-### Features
-
-* enhancing Library ([fb6fcaa](https://github.com/GiovanniCardamone/class-schema/commit/fb6fcaa1009ed170e023c4dfef1e49f5d7b54356))
 
 
 
