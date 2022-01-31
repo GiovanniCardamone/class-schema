@@ -1,3 +1,12 @@
+# [0.13.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.12.3...v0.13.0) (2022-01-31)
+
+
+### Features
+
+* added nullable option to combine type and null ([01790bc](https://github.com/GiovanniCardamone/class-schema/commit/01790bcba3b8c28a3910b915fafa9473c60dd3a9))
+
+
+
 ## [0.12.3](https://github.com/GiovanniCardamone/class-schema/compare/v0.12.2...v0.12.3) (2022-01-31)
 
 
@@ -76,10 +85,6 @@
 ### Features
 
 * of use additionalProps enums ref ([a466a21](https://github.com/GiovanniCardamone/class-schema/commit/a466a210e7e845db5c6001ee6e6e8c3716006808))
-
-
-
-## [0.8.3](https://github.com/GiovanniCardamone/class-schema/compare/v0.8.2...v0.8.3) (2021-10-14)
 
 
 
