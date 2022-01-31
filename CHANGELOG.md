@@ -1,3 +1,12 @@
+## [0.12.3](https://github.com/GiovanniCardamone/class-schema/compare/v0.12.2...v0.12.3) (2022-01-31)
+
+
+### Bug Fixes
+
+* added default prop to Json4SchemaString ([e190c67](https://github.com/GiovanniCardamone/class-schema/commit/e190c67c83c8b9b068ad60f3246a5ebf60ad9dd7))
+
+
+
 ## [0.12.2](https://github.com/GiovanniCardamone/class-schema/compare/v0.12.1...v0.12.2) (2022-01-31)
 
 
@@ -71,10 +80,6 @@
 
 
 ## [0.8.3](https://github.com/GiovanniCardamone/class-schema/compare/v0.8.2...v0.8.3) (2021-10-14)
-
-
-
-## [0.8.2](https://github.com/GiovanniCardamone/class-schema/compare/v0.8.1...v0.8.2) (2021-09-11)
 
 
 
