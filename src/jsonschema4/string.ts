@@ -15,4 +15,6 @@ export interface JsonSchema4String {
 	pattern?: string
 
 	format?: JsonSchema4StringFormat
+
+	enum?: string[]
 }
