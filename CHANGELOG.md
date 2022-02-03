@@ -1,3 +1,12 @@
+# [0.17.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.16.0...v0.17.0) (2022-02-03)
+
+
+### Features
+
+* decorator anyOf, oneOf, allOf implemented ([a0283b9](https://github.com/GiovanniCardamone/class-schema/commit/a0283b9925ea905875a5f5f92ff2745b05bcd0bf))
+
+
+
 # [0.16.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.15.0...v0.16.0) (2022-01-31)
 
 
@@ -76,15 +85,6 @@
 ### Features
 
 * more props ([b6ef403](https://github.com/GiovanniCardamone/class-schema/commit/b6ef4037633611b7373880ab9bcb88fbf6f9ff19))
-
-
-
-## [0.10.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.10.0...v0.10.1) (2021-12-07)
-
-
-### Bug Fixes
-
-* package.json & package-lock.json to reduce vulnerabilities ([2bc7a86](https://github.com/GiovanniCardamone/class-schema/commit/2bc7a86882109aa06653f00eb12f8b2bc4c9a3ac))
 
 
 
