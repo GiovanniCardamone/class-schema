@@ -1,3 +1,12 @@
+# [0.16.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.15.0...v0.16.0) (2022-01-31)
+
+
+### Features
+
+* added nullable props for array and enums ([e94ed0a](https://github.com/GiovanniCardamone/class-schema/commit/e94ed0af09eaa4390ba599cf9dd4fd1148be9661))
+
+
+
 # [0.15.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.14.0...v0.15.0) (2022-01-31)
 
 
@@ -76,15 +85,6 @@
 ### Bug Fixes
 
 * package.json & package-lock.json to reduce vulnerabilities ([2bc7a86](https://github.com/GiovanniCardamone/class-schema/commit/2bc7a86882109aa06653f00eb12f8b2bc4c9a3ac))
-
-
-
-# [0.10.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.9.1...v0.10.0) (2021-12-02)
-
-
-### Features
-
-* image decoder ([3689fdb](https://github.com/GiovanniCardamone/class-schema/commit/3689fdb39dfa0f7c4170d1878d58c256af2770a8))
 
 
 
