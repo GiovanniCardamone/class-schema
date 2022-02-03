@@ -11,6 +11,8 @@ import {
 	useAnyOf,
 	useOneOf,
 	oneOf,
+	anyOf,
+	allOf,
 } from '../src'
 
 describe('schema', () => {
@@ -804,6 +806,194 @@ describe('schema', () => {
 			properties: {
 				ab: {
 					oneOf: [
+						{
+							type: 'object',
+							properties: {
+								a: { type: 'string' },
+							},
+							required: ['a'],
+						},
+						{
+							type: 'object',
+							properties: {
+								b: { type: 'string' },
+							},
+							required: ['b'],
+						},
+					],
+				},
+			},
+			required: [],
+		})
+	})
+
+	//
+
+	it('schema anyOf', async () => {
+		@schema()
+		class TestSchema26A {
+			@prop()
+			a!: string
+		}
+
+		@schema()
+		class TestSchema26B {
+			@prop()
+			b!: string
+		}
+
+		@schema()
+		class TestSchema26 {
+			@anyOf([TestSchema26A, TestSchema26B])
+			ab!: TestSchema26A | TestSchema26B
+		}
+
+		expect(use(TestSchema26)).to.deep.contains({
+			type: 'object',
+			properties: {
+				ab: {
+					anyOf: [
+						{
+							type: 'object',
+							properties: {
+								a: { type: 'string' },
+							},
+							required: ['a'],
+						},
+						{
+							type: 'object',
+							properties: {
+								b: { type: 'string' },
+							},
+							required: ['b'],
+						},
+					],
+				},
+			},
+			required: ['ab'],
+		})
+	})
+
+	it('schema anyOf optional', async () => {
+		@schema()
+		class TestSchema27A {
+			@prop()
+			a!: string
+		}
+
+		@schema()
+		class TestSchema27B {
+			@prop()
+			b!: string
+		}
+
+		@schema()
+		class TestSchema27 {
+			@anyOf([TestSchema27A, TestSchema27B], { required: false })
+			ab!: TestSchema27A | TestSchema27B
+		}
+
+		// console.log({ TestSchema25: use(TestSchema25) })
+
+		expect(use(TestSchema27)).to.deep.contains({
+			type: 'object',
+			properties: {
+				ab: {
+					anyOf: [
+						{
+							type: 'object',
+							properties: {
+								a: { type: 'string' },
+							},
+							required: ['a'],
+						},
+						{
+							type: 'object',
+							properties: {
+								b: { type: 'string' },
+							},
+							required: ['b'],
+						},
+					],
+				},
+			},
+			required: [],
+		})
+	})
+
+	it('schema allOf', async () => {
+		@schema()
+		class TestSchema28A {
+			@prop()
+			a!: string
+		}
+
+		@schema()
+		class TestSchema28B {
+			@prop()
+			b!: string
+		}
+
+		@schema()
+		class TestSchema28 {
+			@allOf([TestSchema28A, TestSchema28B])
+			ab!: TestSchema28A | TestSchema28B
+		}
+
+		// console.log({ TestSchema24: use(TestSchema24) })
+
+		expect(use(TestSchema28)).to.deep.contains({
+			type: 'object',
+			properties: {
+				ab: {
+					allOf: [
+						{
+							type: 'object',
+							properties: {
+								a: { type: 'string' },
+							},
+							required: ['a'],
+						},
+						{
+							type: 'object',
+							properties: {
+								b: { type: 'string' },
+							},
+							required: ['b'],
+						},
+					],
+				},
+			},
+			required: ['ab'],
+		})
+	})
+
+	it('schema allOf optional', async () => {
+		@schema()
+		class TestSchema29A {
+			@prop()
+			a!: string
+		}
+
+		@schema()
+		class TestSchema29B {
+			@prop()
+			b!: string
+		}
+
+		@schema()
+		class TestSchema29 {
+			@allOf([TestSchema29A, TestSchema29B], { required: false })
+			ab!: TestSchema29A | TestSchema29B
+		}
+
+		// console.log({ TestSchema25: use(TestSchema25) })
+
+		expect(use(TestSchema29)).to.deep.contains({
+			type: 'object',
+			properties: {
+				ab: {
+					allOf: [
 						{
 							type: 'object',
 							properties: {
