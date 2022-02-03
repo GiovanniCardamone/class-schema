@@ -9,25 +9,25 @@ export type OfType = {
 	not?: Partial<JSONSchema4>
 }
 
-export function allOf(...constructor: Array<Ctos | OfType>) {
+export function useAllOf(...constructor: Array<Ctos | OfType>) {
 	return {
 		allOf: constructor.map((c) => (isCtos(c) ? use(c) : c)),
 	}
 }
 
-export function anyOf(...constructor: Array<Ctos | OfType>) {
+export function useAnyOf(...constructor: Array<Ctos | OfType>) {
 	return {
 		anyOf: constructor.map((c) => (isCtos(c) ? use(c) : c)),
 	}
 }
 
-export function oneOf(...constructor: Array<Ctos | OfType>) {
+export function useOneOf(...constructor: Array<Ctos | OfType>) {
 	return {
 		oneOf: constructor.map((c) => (isCtos(c) ? use(c) : c)),
 	}
 }
 
-export function not(...constructor: Array<Ctos | OfType>) {
+export function useNot(...constructor: Array<Ctos | OfType>) {
 	return {
 		not: constructor.map((c) => (isCtos(c) ? use(c) : c)),
 	}

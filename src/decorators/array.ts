@@ -1,6 +1,4 @@
-import { JSONSchema4, JSONSchema4Array } from 'json-schema'
-import { JsonSchema4Array } from '../jsonschema4'
-import { UtilsProp, SchemaObject } from '../types'
+import { SchemaObject, UtilsProp } from '../types'
 import { wrapSchema } from '../utils'
 
 /**

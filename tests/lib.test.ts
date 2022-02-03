@@ -8,7 +8,9 @@ import {
 	array,
 	enums,
 	additionalProps,
-	anyOf,
+	useAnyOf,
+	useOneOf,
+	oneOf,
 } from '../src'
 
 describe('schema', () => {
@@ -726,6 +728,100 @@ describe('schema', () => {
 				},
 			},
 			required: ['value'],
+		})
+	})
+
+	it('schema oneOf', async () => {
+		@schema()
+		class TestSchema24A {
+			@prop()
+			a!: string
+		}
+
+		@schema()
+		class TestSchema24B {
+			@prop()
+			b!: string
+		}
+
+		@schema()
+		class TestSchema24 {
+			@oneOf([TestSchema24A, TestSchema24B])
+			ab!: TestSchema24A | TestSchema24B
+		}
+
+		// console.log({ TestSchema24: use(TestSchema24) })
+
+		expect(use(TestSchema24)).to.deep.contains({
+			type: 'object',
+			properties: {
+				ab: {
+					oneOf: [
+						{
+							type: 'object',
+							properties: {
+								a: { type: 'string' },
+							},
+							required: ['a'],
+						},
+						{
+							type: 'object',
+							properties: {
+								b: { type: 'string' },
+							},
+							required: ['b'],
+						},
+					],
+				},
+			},
+			required: ['ab'],
+		})
+	})
+
+	it('schema oneOf optional', async () => {
+		@schema()
+		class TestSchema25A {
+			@prop()
+			a!: string
+		}
+
+		@schema()
+		class TestSchema25B {
+			@prop()
+			b!: string
+		}
+
+		@schema()
+		class TestSchema25 {
+			@oneOf([TestSchema25A, TestSchema25B], { required: false })
+			ab!: TestSchema25A | TestSchema25B
+		}
+
+		// console.log({ TestSchema25: use(TestSchema25) })
+
+		expect(use(TestSchema25)).to.deep.contains({
+			type: 'object',
+			properties: {
+				ab: {
+					oneOf: [
+						{
+							type: 'object',
+							properties: {
+								a: { type: 'string' },
+							},
+							required: ['a'],
+						},
+						{
+							type: 'object',
+							properties: {
+								b: { type: 'string' },
+							},
+							required: ['b'],
+						},
+					],
+				},
+			},
+			required: [],
 		})
 	})
 })

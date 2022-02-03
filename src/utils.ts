@@ -19,9 +19,13 @@ export interface Meta {
  *
  */
 export function wrapSchema(target: Ctos): CtosSchema['__schema'] {
-	const classSchema = target.constructor as CtosSchema
+	const classSchema: CtosSchema =
+		'__schema' in target
+			? (target as CtosSchema)
+			: (target.constructor as CtosSchema)
 
 	// console.log('target', target)
+	// console.log('classSchema', classSchema.__schema)
 	// console.log('constructor', target.constructor)
 	// console.log('parent', target.constructor.__proto__.constructor)
 	const extend = target.constructor.prototype.__proto__.constructor !== Object

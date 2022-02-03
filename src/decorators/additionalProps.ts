@@ -1,9 +1,8 @@
-import { UtilsProp, SchemaObject } from '../types'
-import { buildProperty, isProperty, wrapSchema } from '../utils'
-
-import { use } from '../use'
-import { ValidConstructor } from './prop'
 import { JSONSchema4 } from 'json-schema'
+import { SchemaObject, UtilsProp } from '../types'
+import { use } from '../use'
+import { buildProperty, isProperty, wrapSchema } from '../utils'
+import { ValidConstructor } from './prop'
 
 /**
  *
