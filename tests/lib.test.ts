@@ -1014,4 +1014,26 @@ describe('schema', () => {
 			required: [],
 		})
 	})
+
+	it('array not required', async () => {
+		@schema()
+		class TestSchema30 {
+			@array()
+			@prop(String, { required: false })
+			myArray?: string[]
+		}
+
+		expect(use(TestSchema30)).to.deep.contains({
+			type: 'object',
+			properties: {
+				myArray: {
+					type: 'array',
+					items: {
+						type: 'string',
+					},
+				},
+			},
+			required: [],
+		})
+	})
 })

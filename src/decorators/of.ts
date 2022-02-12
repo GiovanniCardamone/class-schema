@@ -2,7 +2,7 @@ import { SchemaObject, UtilsProp } from '../types'
 import { wrapSchema } from '../utils'
 
 export function oneOf(
-	targets: SchemaObject[],
+	targets: SchemaObject[] | Readonly<SchemaObject[]>,
 	{ required, nullable }: UtilsProp | undefined = {
 		required: true,
 		nullable: false,
@@ -42,7 +42,7 @@ export function oneOf(
 }
 
 export function allOf(
-	targets: SchemaObject[],
+	targets: SchemaObject[] | Readonly<SchemaObject[]>,
 	{ required, nullable }: UtilsProp | undefined = {
 		required: true,
 		nullable: false,
@@ -82,7 +82,7 @@ export function allOf(
 }
 
 export function anyOf(
-	targets: SchemaObject[],
+	targets: SchemaObject[] | Readonly<SchemaObject[]>,
 	{ required, nullable }: UtilsProp | undefined = {
 		required: true,
 		nullable: false,
