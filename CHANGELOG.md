@@ -1,3 +1,12 @@
+# [0.18.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.17.0...v0.18.0) (2022-02-12)
+
+
+### Features
+
+* supporting readonly array for anyof oneof allof ([d31148e](https://github.com/GiovanniCardamone/class-schema/commit/d31148e30a6448a2b78af4946e55f2a08717b8f9))
+
+
+
 # [0.17.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.16.0...v0.17.0) (2022-02-03)
 
 
@@ -76,15 +85,6 @@
 ### Features
 
 * es5 support ([61cf090](https://github.com/GiovanniCardamone/class-schema/commit/61cf090b0b79055c751147f7c5bf4fdb93336b3d))
-
-
-
-# [0.11.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.10.1...v0.11.0) (2021-12-28)
-
-
-### Features
-
-* more props ([b6ef403](https://github.com/GiovanniCardamone/class-schema/commit/b6ef4037633611b7373880ab9bcb88fbf6f9ff19))
 
 
 
