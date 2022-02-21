@@ -6,12 +6,13 @@ import { wrapSchema } from '../utils'
  */
 export default function enums(
 	items: Array<string | number> | Readonly<Array<string | number>>,
-	{ required, nullable }: UtilsProp | undefined = {
+	options: UtilsProp<string | number> | undefined = {
 		required: true,
 	}
 ) {
-	required = required !== undefined ? required : true
-	nullable = nullable !== undefined ? nullable : false
+	const required = options.required !== undefined ? options.required : true
+	const nullable = options.nullable !== undefined ? options.nullable : false
+	// const defaultv = options.default !== undefined ? options.default : undefined
 
 	return function (
 		target: SchemaObject,
@@ -26,6 +27,7 @@ export default function enums(
 					{
 						type: 'string',
 						enum: items as Array<string | number>,
+						default: options.default,
 					},
 					{
 						type: 'null',
@@ -34,7 +36,9 @@ export default function enums(
 			}
 		} else {
 			wrap.properties![name] = {
+				type: 'string',
 				enum: items as Array<string | number>,
+				default: options.default,
 			}
 		}
 

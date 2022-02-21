@@ -349,6 +349,7 @@ describe('schema', () => {
 			required: ['myEnum'],
 			properties: {
 				myEnum: {
+					type: 'string',
 					enum: ENUM,
 				},
 			},
@@ -429,7 +430,30 @@ describe('schema', () => {
 			required: [],
 			properties: {
 				myEnum: {
+					type: 'string',
 					enum: e,
+				},
+			},
+		})
+	})
+
+	it('schema with default enums', async () => {
+		const e = [1, 2, 3] as const
+		type E = typeof e[number]
+		@schema()
+		class TestSchema15_1 {
+			@enums(e, { required: false, default: 2 })
+			myEnum?: E
+		}
+
+		expect(use(TestSchema15_1)).to.be.deep.equals({
+			type: 'object',
+			required: [],
+			properties: {
+				myEnum: {
+					type: 'string',
+					enum: e,
+					default: 2,
 				},
 			},
 		})
