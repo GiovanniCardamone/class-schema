@@ -12,4 +12,6 @@ export interface JsonSchema4Numeric {
 	default?: number
 
 	description?: string
+
+	enum?: number[]
 }
