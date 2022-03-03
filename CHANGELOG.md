@@ -1,3 +1,12 @@
+# [0.19.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.18.0...v0.19.0) (2022-02-21)
+
+
+### Features
+
+* default in enums ([4aedda1](https://github.com/GiovanniCardamone/class-schema/commit/4aedda1c6623f47ce136b76a0854d0ed68fc006a))
+
+
+
 # [0.18.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.17.0...v0.18.0) (2022-02-12)
 
 
@@ -76,15 +85,6 @@
 ### Bug Fixes
 
 * added enum prop to Json4SchemaString ([94a962c](https://github.com/GiovanniCardamone/class-schema/commit/94a962cebc73af58c412ed2d35083b93335d615e))
-
-
-
-# [0.12.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.11.0...v0.12.0) (2022-01-13)
-
-
-### Features
-
-* es5 support ([61cf090](https://github.com/GiovanniCardamone/class-schema/commit/61cf090b0b79055c751147f7c5bf4fdb93336b3d))
 
 
 
