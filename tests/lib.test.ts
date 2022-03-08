@@ -1060,4 +1060,51 @@ describe('schema', () => {
 			required: [],
 		})
 	})
+
+	it('array min max items', async () => {
+		@schema()
+		class TestSchema31 {
+			@array({ min: 1, max: 10 })
+			@prop(String, { required: false })
+			myArray?: string[]
+		}
+
+		expect(use(TestSchema31)).to.deep.contains({
+			type: 'object',
+			properties: {
+				myArray: {
+					type: 'array',
+					items: {
+						type: 'string',
+					},
+					minItems: 1,
+					maxItems: 10,
+				},
+			},
+			required: [],
+		})
+	})
+
+	it('array unique items', async () => {
+		@schema()
+		class TestSchema32 {
+			@array({ unique: true })
+			@prop(String, { required: false })
+			myArray?: string[]
+		}
+
+		expect(use(TestSchema32)).to.deep.contains({
+			type: 'object',
+			properties: {
+				myArray: {
+					type: 'array',
+					items: {
+						type: 'string',
+					},
+					uniqueItems: true,
+				},
+			},
+			required: [],
+		})
+	})
 })

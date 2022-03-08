@@ -7,3 +7,9 @@ export interface UtilsProp<T = unknown> {
 	nullable?: boolean
 	default?: T
 }
+
+export interface ArrayUtilsProp<T = unknown> {
+	min?: number
+	max?: number
+	unique?: boolean
+}

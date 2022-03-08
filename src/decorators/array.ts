@@ -1,11 +1,17 @@
-import { SchemaObject, UtilsProp } from '../types'
+import { SchemaObject, UtilsProp, ArrayUtilsProp } from '../types'
 import { wrapSchema } from '../utils'
 
 /**
  *
  */
 export default function array(
-	{ required, nullable }: UtilsProp | undefined = {
+	{
+		required,
+		nullable,
+		min,
+		max,
+		unique,
+	}: (UtilsProp & ArrayUtilsProp) | undefined = {
 		required: true,
 		nullable: false,
 	}
@@ -31,6 +37,9 @@ export default function array(
 					{
 						type: 'array',
 						items: wrap.properties![name],
+						...(min !== undefined && { minItems: min }),
+						...(max !== undefined && { maxItems: max }),
+						...(unique !== undefined && { uniqueItems: unique }),
 					},
 					{ type: 'null' },
 				],
@@ -39,6 +48,9 @@ export default function array(
 			wrap.properties![name] = {
 				type: 'array',
 				items: wrap.properties![name],
+				...(min !== undefined && { minItems: min }),
+				...(max !== undefined && { maxItems: max }),
+				...(unique !== undefined && { uniqueItems: unique }),
 			}
 		}
 	}
