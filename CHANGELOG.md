@@ -1,3 +1,12 @@
+# [0.21.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.20.0...v0.21.0) (2022-03-08)
+
+
+### Features
+
+* array  minItems maxItems uniqueItems ([43500e4](https://github.com/GiovanniCardamone/class-schema/commit/43500e46cf8765af3072f226d0db038f2400d012))
+
+
+
 # [0.20.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.19.0...v0.20.0) (2022-03-03)
 
 
@@ -76,15 +85,6 @@
 ### Bug Fixes
 
 * added default prop to Json4SchemaString ([e190c67](https://github.com/GiovanniCardamone/class-schema/commit/e190c67c83c8b9b068ad60f3246a5ebf60ad9dd7))
-
-
-
-## [0.12.2](https://github.com/GiovanniCardamone/class-schema/compare/v0.12.1...v0.12.2) (2022-01-31)
-
-
-### Bug Fixes
-
-* added default prop to Json4SchemaBoolean ([b8d31a8](https://github.com/GiovanniCardamone/class-schema/commit/b8d31a884fc0987ad1cdfdae133c07caafaf9bea))
 
 
 
