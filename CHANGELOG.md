@@ -1,3 +1,12 @@
+# [0.22.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.21.0...v0.22.0) (2022-03-24)
+
+
+### Features
+
+* const ([68d6fe1](https://github.com/GiovanniCardamone/class-schema/commit/68d6fe196c13f00d9de2af72b5ef512c0d5c8ccd))
+
+
+
 # [0.21.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.20.0...v0.21.0) (2022-03-08)
 
 
@@ -76,15 +85,6 @@
 ### Features
 
 * added nullable option to combine type and null ([01790bc](https://github.com/GiovanniCardamone/class-schema/commit/01790bcba3b8c28a3910b915fafa9473c60dd3a9))
-
-
-
-## [0.12.3](https://github.com/GiovanniCardamone/class-schema/compare/v0.12.2...v0.12.3) (2022-01-31)
-
-
-### Bug Fixes
-
-* added default prop to Json4SchemaString ([e190c67](https://github.com/GiovanniCardamone/class-schema/commit/e190c67c83c8b9b068ad60f3246a5ebf60ad9dd7))
 
 
 
