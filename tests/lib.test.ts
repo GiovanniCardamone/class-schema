@@ -1109,7 +1109,7 @@ describe('schema', () => {
 		})
 	})
 
-	it('const', async () => {
+	it('const required', async () => {
 		@schema()
 		class TestSchema33 {
 			@consts('hello')
@@ -1125,6 +1125,25 @@ describe('schema', () => {
 				},
 			},
 			required: ['myConst'],
+		})
+	})
+
+	it('const optional', async () => {
+		@schema()
+		class TestSchema34 {
+			@consts('hello', { required: false })
+			myConst!: 'hello'
+		}
+
+		expect(use(TestSchema34)).to.deep.contains({
+			type: 'object',
+			properties: {
+				myConst: {
+					type: 'string',
+					const: 'hello',
+				},
+			},
+			required: [],
 		})
 	})
 })
