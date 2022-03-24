@@ -13,6 +13,7 @@ import {
 	oneOf,
 	anyOf,
 	allOf,
+	consts,
 } from '../src'
 
 describe('schema', () => {
@@ -1105,6 +1106,25 @@ describe('schema', () => {
 				},
 			},
 			required: [],
+		})
+	})
+
+	it('const', async () => {
+		@schema()
+		class TestSchema33 {
+			@consts('hello')
+			myConst!: 'hello'
+		}
+
+		expect(use(TestSchema33)).to.deep.contains({
+			type: 'object',
+			properties: {
+				myConst: {
+					type: 'string',
+					const: 'hello',
+				},
+			},
+			required: ['myConst'],
 		})
 	})
 })
