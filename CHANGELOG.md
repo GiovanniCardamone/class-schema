@@ -1,3 +1,7 @@
+## [0.22.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.0...v0.22.1) (2022-03-24)
+
+
+
 # [0.22.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.21.0...v0.22.0) (2022-03-24)
 
 
@@ -76,15 +80,6 @@
 ### Features
 
 * added nullable option for ref to combine type and null ([eafec5f](https://github.com/GiovanniCardamone/class-schema/commit/eafec5f50acc85c6047948feea8865b5d8a2513c))
-
-
-
-# [0.13.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.12.3...v0.13.0) (2022-01-31)
-
-
-### Features
-
-* added nullable option to combine type and null ([01790bc](https://github.com/GiovanniCardamone/class-schema/commit/01790bcba3b8c28a3910b915fafa9473c60dd3a9))
 
 
 
