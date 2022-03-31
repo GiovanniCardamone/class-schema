@@ -1,3 +1,12 @@
+## [0.22.2](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.1...v0.22.2) (2022-03-31)
+
+
+### Bug Fixes
+
+* boolean schema ([644175e](https://github.com/GiovanniCardamone/class-schema/commit/644175edaacaf5d5dd4aca2d49e6e65ddd4411b9))
+
+
+
 ## [0.22.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.0...v0.22.1) (2022-03-24)
 
 
@@ -71,15 +80,6 @@
 ### Features
 
 * added description props ([a193538](https://github.com/GiovanniCardamone/class-schema/commit/a193538606b62706a5c06a2fe879deceb2b7bbcf))
-
-
-
-# [0.14.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.13.0...v0.14.0) (2022-01-31)
-
-
-### Features
-
-* added nullable option for ref to combine type and null ([eafec5f](https://github.com/GiovanniCardamone/class-schema/commit/eafec5f50acc85c6047948feea8865b5d8a2513c))
 
 
 
