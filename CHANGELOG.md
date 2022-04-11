@@ -1,3 +1,12 @@
+## [0.22.3](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.2...v0.22.3) (2022-04-11)
+
+
+### Bug Fixes
+
+* removed unused dependencies ([ddc4509](https://github.com/GiovanniCardamone/class-schema/commit/ddc4509af6145184928f004980a5ab3b73643308))
+
+
+
 ## [0.22.2](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.1...v0.22.2) (2022-03-31)
 
 
@@ -71,15 +80,6 @@
 ### Features
 
 * added nullable props for array and enums ([e94ed0a](https://github.com/GiovanniCardamone/class-schema/commit/e94ed0af09eaa4390ba599cf9dd4fd1148be9661))
-
-
-
-# [0.15.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.14.0...v0.15.0) (2022-01-31)
-
-
-### Features
-
-* added description props ([a193538](https://github.com/GiovanniCardamone/class-schema/commit/a193538606b62706a5c06a2fe879deceb2b7bbcf))
 
 
 
