@@ -1,13 +1,9 @@
 {
-  "name": "@giovannicardamone/class-schema",
-  "version": "0.22.7",
+  "name": "tmp-class-schema",
+  "version": "0.22.8",
   "description": "Javascript / Typescript class to JsonSchema",
   "main": "dist/index.js",
   "private": false,
-  "--prettier": "@giovannicardamone/prettier-config",
-  "--eslintConfig": {
-    "extends": "@giovannicardamone/eslint-config"
-  },
   "scripts": {
     "test": "ts-mocha 'tests/**.test.ts'",
     "cover": "nyc npm run test",
