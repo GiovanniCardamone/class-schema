@@ -1,5 +1,5 @@
 {
-  "name": "class-schema",
+  "name": "@giovannicardamone/class-schema",
   "version": "0.22.4",
   "description": "Javascript / Typescript class to JsonSchema",
   "main": "dist/index.js",
