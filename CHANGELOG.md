@@ -1,3 +1,7 @@
+## [0.22.5](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.4...v0.22.5) (2022-04-11)
+
+
+
 ## [0.22.4](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.3...v0.22.4) (2022-04-11)
 
 
@@ -66,15 +70,6 @@
 ### Features
 
 * supporting readonly array for anyof oneof allof ([d31148e](https://github.com/GiovanniCardamone/class-schema/commit/d31148e30a6448a2b78af4946e55f2a08717b8f9))
-
-
-
-# [0.17.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.16.0...v0.17.0) (2022-02-03)
-
-
-### Features
-
-* decorator anyOf, oneOf, allOf implemented ([a0283b9](https://github.com/GiovanniCardamone/class-schema/commit/a0283b9925ea905875a5f5f92ff2745b05bcd0bf))
 
 
 
