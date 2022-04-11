@@ -1,3 +1,7 @@
+## [0.22.8](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.7...v0.22.8) (2022-04-11)
+
+
+
 ## [0.22.7](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.6...v0.22.7) (2022-04-11)
 
 
@@ -51,15 +55,6 @@
 ### Features
 
 * array  minItems maxItems uniqueItems ([43500e4](https://github.com/GiovanniCardamone/class-schema/commit/43500e46cf8765af3072f226d0db038f2400d012))
-
-
-
-# [0.20.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.19.0...v0.20.0) (2022-03-03)
-
-
-### Features
-
-* added enum to JsonSchema4Numeric ([0e60972](https://github.com/GiovanniCardamone/class-schema/commit/0e60972dd31c6069710d620c384505d479939787))
 
 
 
