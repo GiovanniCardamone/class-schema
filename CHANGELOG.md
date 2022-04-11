@@ -1,3 +1,7 @@
+## [0.22.4](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.3...v0.22.4) (2022-04-11)
+
+
+
 ## [0.22.3](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.2...v0.22.3) (2022-04-11)
 
 
@@ -71,15 +75,6 @@
 ### Features
 
 * decorator anyOf, oneOf, allOf implemented ([a0283b9](https://github.com/GiovanniCardamone/class-schema/commit/a0283b9925ea905875a5f5f92ff2745b05bcd0bf))
-
-
-
-# [0.16.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.15.0...v0.16.0) (2022-01-31)
-
-
-### Features
-
-* added nullable props for array and enums ([e94ed0a](https://github.com/GiovanniCardamone/class-schema/commit/e94ed0af09eaa4390ba599cf9dd4fd1148be9661))
 
 
 
