@@ -1,3 +1,7 @@
+## [0.22.6](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.5...v0.22.6) (2022-04-11)
+
+
+
 ## [0.22.5](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.4...v0.22.5) (2022-04-11)
 
 
@@ -61,15 +65,6 @@
 ### Features
 
 * default in enums ([4aedda1](https://github.com/GiovanniCardamone/class-schema/commit/4aedda1c6623f47ce136b76a0854d0ed68fc006a))
-
-
-
-# [0.18.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.17.0...v0.18.0) (2022-02-12)
-
-
-### Features
-
-* supporting readonly array for anyof oneof allof ([d31148e](https://github.com/GiovanniCardamone/class-schema/commit/d31148e30a6448a2b78af4946e55f2a08717b8f9))
 
 
 
