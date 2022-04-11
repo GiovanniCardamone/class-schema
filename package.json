@@ -1,6 +1,6 @@
 {
   "name": "tmp-class-schema",
-  "version": "0.22.8",
+  "version": "0.22.9",
   "description": "Javascript / Typescript class to JsonSchema",
   "main": "dist/index.js",
   "private": false,

@@ -1,3 +1,7 @@
+## [0.22.9](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.8...v0.22.9) (2022-04-11)
+
+
+
 ## [0.22.8](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.7...v0.22.8) (2022-04-11)
 
 
@@ -46,15 +50,6 @@
 ### Features
 
 * const ([68d6fe1](https://github.com/GiovanniCardamone/class-schema/commit/68d6fe196c13f00d9de2af72b5ef512c0d5c8ccd))
-
-
-
-# [0.21.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.20.0...v0.21.0) (2022-03-08)
-
-
-### Features
-
-* array  minItems maxItems uniqueItems ([43500e4](https://github.com/GiovanniCardamone/class-schema/commit/43500e46cf8765af3072f226d0db038f2400d012))
 
 
 
