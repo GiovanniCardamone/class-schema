@@ -1,3 +1,7 @@
+## [0.22.7](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.6...v0.22.7) (2022-04-11)
+
+
+
 ## [0.22.6](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.5...v0.22.6) (2022-04-11)
 
 
@@ -56,15 +60,6 @@
 ### Features
 
 * added enum to JsonSchema4Numeric ([0e60972](https://github.com/GiovanniCardamone/class-schema/commit/0e60972dd31c6069710d620c384505d479939787))
-
-
-
-# [0.19.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.18.0...v0.19.0) (2022-02-21)
-
-
-### Features
-
-* default in enums ([4aedda1](https://github.com/GiovanniCardamone/class-schema/commit/4aedda1c6623f47ce136b76a0854d0ed68fc006a))
 
 
 
