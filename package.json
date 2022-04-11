@@ -4,8 +4,8 @@
   "description": "Javascript / Typescript class to JsonSchema",
   "main": "dist/index.js",
   "private": false,
-  "prettier": "@giovannicardamone/prettier-config",
-  "eslintConfig": {
+  "--prettier": "@giovannicardamone/prettier-config",
+  "--eslintConfig": {
     "extends": "@giovannicardamone/eslint-config"
   },
   "scripts": {
@@ -32,8 +32,6 @@
   },
   "homepage": "https://github.com/GiovanniCardamone/class-schema#readme",
   "devDependencies": {
-    "@giovannicardamone/eslint-config": "^0.3.1",
-    "@giovannicardamone/prettier-config": "^0.1.1",
     "@types/chai": "^4.2.21",
     "@types/mocha": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
