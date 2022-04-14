@@ -1,3 +1,12 @@
+## [0.24.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.24.0...v0.24.1) (2022-04-14)
+
+
+### Bug Fixes
+
+* useArray native types ([78837b2](https://github.com/GiovanniCardamone/class-schema/commit/78837b2a45402c6c35f5449980c507db8165607b))
+
+
+
 # [0.24.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.23.0...v0.24.0) (2022-04-14)
 
 
@@ -41,15 +50,6 @@
 
 
 ## [0.22.4](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.3...v0.22.4) (2022-04-11)
-
-
-
-## [0.22.3](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.2...v0.22.3) (2022-04-11)
-
-
-### Bug Fixes
-
-* removed unused dependencies ([ddc4509](https://github.com/GiovanniCardamone/class-schema/commit/ddc4509af6145184928f004980a5ab3b73643308))
 
 
 
