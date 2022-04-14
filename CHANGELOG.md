@@ -1,3 +1,12 @@
+# [0.24.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.23.0...v0.24.0) (2022-04-14)
+
+
+### Features
+
+* useEnum ([19a6ba9](https://github.com/GiovanniCardamone/class-schema/commit/19a6ba9ae1d8c644902f9f25a5387809040e85ac))
+
+
+
 # [0.23.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.10...v0.23.0) (2022-04-14)
 
 
@@ -41,15 +50,6 @@
 ### Bug Fixes
 
 * removed unused dependencies ([ddc4509](https://github.com/GiovanniCardamone/class-schema/commit/ddc4509af6145184928f004980a5ab3b73643308))
-
-
-
-## [0.22.2](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.1...v0.22.2) (2022-03-31)
-
-
-### Bug Fixes
-
-* boolean schema ([644175e](https://github.com/GiovanniCardamone/class-schema/commit/644175edaacaf5d5dd4aca2d49e6e65ddd4411b9))
 
 
 
