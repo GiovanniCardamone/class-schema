@@ -1,4 +1,4 @@
-import { JSONSchema4 } from "json-schema";
+import { JSONSchema4, JSONSchema4Type } from "json-schema";
 import { ValidConstructor } from "./decorators/prop";
 import { Ctos, CtosSchema } from "./utils";
 
@@ -54,4 +54,10 @@ export function useArray(
 		type: "array",
 		items: JSON.parse(JSON.stringify(ctoschema.__schema)),
 	};
+}
+
+export function useEnum(
+	values: Array<JSONSchema4Type> | ReadonlyArray<JSONSchema4Type>
+): Partial<JSONSchema4> {
+	return { enum: [...values] };
 }

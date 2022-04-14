@@ -14,6 +14,7 @@ import {
 	anyOf,
 	allOf,
 	consts,
+	useEnum,
 } from "../src";
 
 describe("schema", () => {
@@ -1162,6 +1163,12 @@ describe("schema", () => {
 
 		expect(use(null)).to.deep.contains({
 			type: "null",
+		});
+	});
+
+	it("use enum", async () => {
+		expect(useEnum(["a", "b", 1])).to.deep.contains({
+			enum: ["a", "b", 1],
 		});
 	});
 });
