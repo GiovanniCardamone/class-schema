@@ -3,7 +3,13 @@ import { ValidConstructor } from "./decorators/prop";
 import { Ctos, CtosSchema } from "./utils";
 
 export function use(
-	constructor: Ctos | ValidConstructor
+	constructor:
+		| Ctos
+		| ValidConstructor
+		| StringConstructor
+		| NumberConstructor
+		| BooleanConstructor
+		| null
 ): Partial<JSONSchema4> {
 	// @ts-expect-error typescript struggle
 	const ctoschema:
@@ -42,9 +48,23 @@ export function use(
 }
 
 export function useArray(
-	constructor: Ctos | ValidConstructor
+	constructor:
+		| Ctos
+		| ValidConstructor
+		| StringConstructor
+		| NumberConstructor
+		| BooleanConstructor
+		| null
 ): Partial<JSONSchema4> {
 	const ctoschema = constructor as unknown as CtosSchema;
+
+	// @ts-expect-error typescript struggle
+	if ([String, Number, Boolean, null].includes(constructor)) {
+		return {
+			type: "array",
+			items: use(constructor),
+		};
+	}
 
 	if ("__schema" in ctoschema === false) {
 		throw new TypeError(`${constructor}: not a schema class`);

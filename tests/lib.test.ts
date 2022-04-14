@@ -15,6 +15,7 @@ import {
 	allOf,
 	consts,
 	useEnum,
+	useArray,
 } from "../src";
 
 describe("schema", () => {
@@ -1163,6 +1164,34 @@ describe("schema", () => {
 
 		expect(use(null)).to.deep.contains({
 			type: "null",
+		});
+
+		expect(useArray(String)).to.deep.contains({
+			type: "array",
+			items: {
+				type: "string",
+			},
+		});
+
+		expect(useArray(Number)).to.deep.contains({
+			type: "array",
+			items: {
+				type: "number",
+			},
+		});
+
+		expect(useArray(Boolean)).to.deep.contains({
+			type: "array",
+			items: {
+				type: "boolean",
+			},
+		});
+
+		expect(useArray(null)).to.deep.contains({
+			type: "array",
+			items: {
+				type: "null",
+			},
 		});
 	});
 
