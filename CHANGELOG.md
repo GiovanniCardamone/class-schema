@@ -1,3 +1,7 @@
+## [0.22.10](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.9...v0.22.10) (2022-04-11)
+
+
+
 ## [0.22.9](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.8...v0.22.9) (2022-04-11)
 
 
@@ -41,15 +45,6 @@
 
 
 ## [0.22.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.0...v0.22.1) (2022-03-24)
-
-
-
-# [0.22.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.21.0...v0.22.0) (2022-03-24)
-
-
-### Features
-
-* const ([68d6fe1](https://github.com/GiovanniCardamone/class-schema/commit/68d6fe196c13f00d9de2af72b5ef512c0d5c8ccd))
 
 
 
