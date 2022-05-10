@@ -127,6 +127,8 @@ describe("schema", () => {
 			properties: {
 				another: {
 					type: "object",
+					description: "TestSchema5Nested",
+					title: "TestSchema5Nested",
 					required: ["myString"],
 					properties: {
 						myString: {
@@ -139,6 +141,8 @@ describe("schema", () => {
 				},
 				nested: {
 					type: "object",
+					description: "TestSchema5Nested",
+					title: "TestSchema5Nested",
 					required: ["myString"],
 					properties: {
 						myString: {
@@ -182,10 +186,14 @@ describe("schema", () => {
 			properties: {
 				nested: {
 					type: "object",
+					title: "TestSchema6Nested",
+					description: "TestSchema6Nested",
 					required: ["nested"],
 					properties: {
 						nested: {
 							type: "object",
+							title: "TestSchema6NestedNested",
+							description: "TestSchema6NestedNested",
 							required: ["myString"],
 							properties: {
 								myString: {
@@ -228,6 +236,8 @@ describe("schema", () => {
 					type: "array",
 					items: {
 						type: "object",
+						title: "TestSchema7Nested",
+						description: "TestSchema7Nested",
 						required: ["myString"],
 						properties: {
 							myNumber: {
@@ -267,6 +277,8 @@ describe("schema", () => {
 			properties: {
 				nested: {
 					type: "object",
+					title: "TestSchema8Nested",
+					description: "TestSchema8Nested",
 					required: ["myString"],
 					properties: {
 						myNumber: {
@@ -314,12 +326,16 @@ describe("schema", () => {
 			properties: {
 				myRef: {
 					type: "object",
+					title: "TestSchema9Nested",
+					description: "TestSchema9Nested",
 					required: ["myOtherRef"],
 					properties: {
 						myOtherRef: {
 							type: "array",
 							items: {
 								type: "object",
+								title: "TestSchema9NestedNested",
+								description: "TestSchema9NestedNested",
 								required: ["myString"],
 								properties: {
 									myNumber: {
@@ -349,6 +365,8 @@ describe("schema", () => {
 
 		expect(use(TestSchema10)).to.deep.equals({
 			type: "object",
+			title: "TestSchema10",
+			description: "TestSchema10",
 			required: ["myEnum"],
 			properties: {
 				myEnum: {
@@ -370,6 +388,8 @@ describe("schema", () => {
 		expect(use(TestSchema11)).to.deep.equals({
 			type: "object",
 			required: ["myDate"],
+			title: "TestSchema11",
+			description: "TestSchema11",
 			properties: {
 				myDate: {
 					type: "string",
@@ -410,6 +430,8 @@ describe("schema", () => {
 
 		expect(use(TestSchema14)).to.be.deep.equals({
 			type: "object",
+			title: "TestSchema14",
+			description: "TestSchema14",
 			required: ["myBoolean"],
 			properties: {
 				myBoolean: {
@@ -430,6 +452,8 @@ describe("schema", () => {
 
 		expect(use(TestSchema15)).to.be.deep.equals({
 			type: "object",
+			title: "TestSchema15",
+			description: "TestSchema15",
 			required: [],
 			properties: {
 				myEnum: {
@@ -451,6 +475,8 @@ describe("schema", () => {
 
 		expect(use(TestSchema15_1)).to.be.deep.equals({
 			type: "object",
+			title: "TestSchema15_1",
+			description: "TestSchema15_1",
 			required: [],
 			properties: {
 				myEnum: {
@@ -480,6 +506,8 @@ describe("schema", () => {
 			"base class should have only own items"
 		).to.be.deep.equals({
 			type: "object",
+			title: "TestSchema15Base",
+			description: "TestSchema15Base",
 			required: ["myNumber"],
 			properties: {
 				myNumber: {
@@ -493,6 +521,8 @@ describe("schema", () => {
 			"extends have base plus extends"
 		).to.be.deep.equals({
 			type: "object",
+			title: "TestSchema15",
+			description: "TestSchema15",
 			required: ["myNumber", "myString"],
 			properties: {
 				myNumber: {
@@ -529,6 +559,8 @@ describe("schema", () => {
 			"base class should have only own items"
 		).to.be.deep.equals({
 			type: "object",
+			title: "TestSchema16BaseBase",
+			description: "TestSchema16BaseBase",
 			required: ["myNumber"],
 			properties: {
 				myNumber: {
@@ -542,6 +574,8 @@ describe("schema", () => {
 			"extends have base plus extends"
 		).to.be.deep.equals({
 			type: "object",
+			title: "TestSchema16Base",
+			description: "TestSchema16Base",
 			required: ["myNumber", "myString"],
 			properties: {
 				myNumber: {
@@ -558,6 +592,8 @@ describe("schema", () => {
 			"extends have base plus extends plus extends"
 		).to.be.deep.equals({
 			type: "object",
+			title: "TestSchema16",
+			description: "TestSchema16",
 			required: ["myNumber", "myString", "myBoolean"],
 			properties: {
 				myNumber: {
@@ -583,6 +619,8 @@ describe("schema", () => {
 
 		expect(use(TestSchema17)).to.deep.contains({
 			type: "object",
+			title: "TestSchema17",
+			description: "TestSchema17",
 			required: ["myNumber"],
 			properties: {
 				myNumber: {
@@ -609,6 +647,8 @@ describe("schema", () => {
 		}
 		expect(use(TestSchema18)).to.deep.contains({
 			type: "object",
+			title: "TestSchema18",
+			description: "TestSchema18",
 			required: ["myAdditionalProps"],
 			properties: {
 				myAdditionalProps: {
@@ -638,6 +678,8 @@ describe("schema", () => {
 		}
 		expect(use(TestSchema19)).to.deep.contains({
 			type: "object",
+			title: "TestSchema19",
+			description: "TestSchema19",
 			required: ["myAdditionalProps"],
 			properties: {
 				myAdditionalProps: {
@@ -661,6 +703,8 @@ describe("schema", () => {
 
 		expect(use(TestSchema20)).to.deep.contains({
 			type: "object",
+			title: "TestSchema20",
+			description: "TestSchema20",
 			properties: {
 				value: {
 					anyOf: [{ type: "string" }, { type: "null" }],
@@ -681,6 +725,8 @@ describe("schema", () => {
 
 		expect(use(TestSchema21)).to.deep.contains({
 			type: "object",
+			title: "TestSchema21",
+			description: "TestSchema21",
 			properties: {
 				value: {
 					anyOf: [{ type: "string" }, { type: "null" }],
@@ -707,11 +753,15 @@ describe("schema", () => {
 
 		expect(use(TestSchema22)).to.deep.contains({
 			type: "object",
+			title: "TestSchema22",
+			description: "TestSchema22",
 			properties: {
 				value: {
 					anyOf: [
 						{
 							type: "object",
+							title: "TestSchema22Ref",
+							description: "TestSchema22Ref",
 							properties: { val: { type: "string" } },
 							required: ["val"],
 						},
@@ -741,6 +791,8 @@ describe("schema", () => {
 
 		expect(use(TestSchema23)).to.deep.contains({
 			type: "object",
+			title: "TestSchema23",
+			description: "TestSchema23",
 			properties: {
 				value: {
 					anyOf: [
@@ -748,6 +800,8 @@ describe("schema", () => {
 							type: "array",
 							items: {
 								type: "object",
+								title: "TestSchema23Ref",
+								description: "TestSchema23Ref",
 								properties: { val: { type: "string" } },
 								required: ["val"],
 							},
@@ -783,11 +837,15 @@ describe("schema", () => {
 
 		expect(use(TestSchema24)).to.deep.contains({
 			type: "object",
+			title: "TestSchema24",
+			description: "TestSchema24",
 			properties: {
 				ab: {
 					oneOf: [
 						{
 							type: "object",
+							title: "TestSchema24A",
+							description: "TestSchema24A",
 							properties: {
 								a: { type: "string" },
 							},
@@ -795,6 +853,8 @@ describe("schema", () => {
 						},
 						{
 							type: "object",
+							title: "TestSchema24B",
+							description: "TestSchema24B",
 							properties: {
 								b: { type: "string" },
 							},
@@ -830,11 +890,15 @@ describe("schema", () => {
 
 		expect(use(TestSchema25)).to.deep.contains({
 			type: "object",
+			title: "TestSchema25",
+			description: "TestSchema25",
 			properties: {
 				ab: {
 					oneOf: [
 						{
 							type: "object",
+							title: "TestSchema25A",
+							description: "TestSchema25A",
 							properties: {
 								a: { type: "string" },
 							},
@@ -842,6 +906,8 @@ describe("schema", () => {
 						},
 						{
 							type: "object",
+							title: "TestSchema25B",
+							description: "TestSchema25B",
 							properties: {
 								b: { type: "string" },
 							},
@@ -877,11 +943,15 @@ describe("schema", () => {
 
 		expect(use(TestSchema26)).to.deep.contains({
 			type: "object",
+			title: "TestSchema26",
+			description: "TestSchema26",
 			properties: {
 				ab: {
 					anyOf: [
 						{
 							type: "object",
+							title: "TestSchema26A",
+							description: "TestSchema26A",
 							properties: {
 								a: { type: "string" },
 							},
@@ -889,6 +959,8 @@ describe("schema", () => {
 						},
 						{
 							type: "object",
+							title: "TestSchema26B",
+							description: "TestSchema26B",
 							properties: {
 								b: { type: "string" },
 							},
@@ -924,11 +996,15 @@ describe("schema", () => {
 
 		expect(use(TestSchema27)).to.deep.contains({
 			type: "object",
+			title: "TestSchema27",
+			description: "TestSchema27",
 			properties: {
 				ab: {
 					anyOf: [
 						{
 							type: "object",
+							title: "TestSchema27A",
+							description: "TestSchema27A",
 							properties: {
 								a: { type: "string" },
 							},
@@ -936,6 +1012,8 @@ describe("schema", () => {
 						},
 						{
 							type: "object",
+							title: "TestSchema27B",
+							description: "TestSchema27B",
 							properties: {
 								b: { type: "string" },
 							},
@@ -971,11 +1049,15 @@ describe("schema", () => {
 
 		expect(use(TestSchema28)).to.deep.contains({
 			type: "object",
+			title: "TestSchema28",
+			description: "TestSchema28",
 			properties: {
 				ab: {
 					allOf: [
 						{
 							type: "object",
+							title: "TestSchema28A",
+							description: "TestSchema28A",
 							properties: {
 								a: { type: "string" },
 							},
@@ -983,6 +1065,8 @@ describe("schema", () => {
 						},
 						{
 							type: "object",
+							title: "TestSchema28B",
+							description: "TestSchema28B",
 							properties: {
 								b: { type: "string" },
 							},
@@ -1018,11 +1102,15 @@ describe("schema", () => {
 
 		expect(use(TestSchema29)).to.deep.contains({
 			type: "object",
+			title: "TestSchema29",
+			description: "TestSchema29",
 			properties: {
 				ab: {
 					allOf: [
 						{
 							type: "object",
+							title: "TestSchema29A",
+							description: "TestSchema29A",
 							properties: {
 								a: { type: "string" },
 							},
@@ -1030,6 +1118,8 @@ describe("schema", () => {
 						},
 						{
 							type: "object",
+							title: "TestSchema29B",
+							description: "TestSchema29B",
 							properties: {
 								b: { type: "string" },
 							},
@@ -1052,6 +1142,8 @@ describe("schema", () => {
 
 		expect(use(TestSchema30)).to.deep.contains({
 			type: "object",
+			title: "TestSchema30",
+			description: "TestSchema30",
 			properties: {
 				myArray: {
 					type: "array",
@@ -1074,6 +1166,8 @@ describe("schema", () => {
 
 		expect(use(TestSchema31)).to.deep.contains({
 			type: "object",
+			title: "TestSchema31",
+			description: "TestSchema31",
 			properties: {
 				myArray: {
 					type: "array",
@@ -1098,6 +1192,8 @@ describe("schema", () => {
 
 		expect(use(TestSchema32)).to.deep.contains({
 			type: "object",
+			title: "TestSchema32",
+			description: "TestSchema32",
 			properties: {
 				myArray: {
 					type: "array",
@@ -1120,6 +1216,8 @@ describe("schema", () => {
 
 		expect(use(TestSchema33)).to.deep.contains({
 			type: "object",
+			title: "TestSchema33",
+			description: "TestSchema33",
 			properties: {
 				myConst: {
 					type: "string",
@@ -1139,6 +1237,8 @@ describe("schema", () => {
 
 		expect(use(TestSchema34)).to.deep.contains({
 			type: "object",
+			title: "TestSchema34",
+			description: "TestSchema34",
 			properties: {
 				myConst: {
 					type: "string",
