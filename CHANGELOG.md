@@ -1,3 +1,12 @@
+# [0.25.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.24.1...v0.25.0) (2022-05-10)
+
+
+### Features
+
+* adding title and description to object ([2f41213](https://github.com/GiovanniCardamone/class-schema/commit/2f41213956f2b900186be84966de2f3483dd73e6))
+
+
+
 ## [0.24.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.24.0...v0.24.1) (2022-04-14)
 
 
@@ -46,10 +55,6 @@
 
 
 ## [0.22.5](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.4...v0.22.5) (2022-04-11)
-
-
-
-## [0.22.4](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.3...v0.22.4) (2022-04-11)
 
 
 
