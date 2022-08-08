@@ -22,7 +22,7 @@ export default function schema(props?: JSONSchema4, additional?: Additional) {
 			ctosSchema.__schema = {
 				...ctosSchema.__schema,
 				title: constructor.name,
-				description: constructor.name,
+				description: props?.description ?? constructor.name,
 				required: [
 					...new Set([
 						...(parentSchema.required as string[]),
