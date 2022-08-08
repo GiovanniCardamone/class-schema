@@ -1311,8 +1311,8 @@ describe("schema", () => {
 			type: "object",
 			title: "TestSchema35",
 			description: "My description",
-		})
-	})
+		});
+	});
 
 	it('use the class name by default as schema description', () => {
 		@schema()
@@ -1322,8 +1322,8 @@ describe("schema", () => {
 			type: "object",
 			title: "TestSchema36",
 			description: "TestSchema36",
-		})
-	})
+		});
+	});
 
 	it('use the user-defined schema description with inherited schema', () => {
 		@schema({
@@ -1331,7 +1331,7 @@ describe("schema", () => {
 		})
 		class TestSchema37A {
 			@prop()
-			myProp: string
+			myProp: string;
 		}
 
 		@schema({
@@ -1339,15 +1339,15 @@ describe("schema", () => {
 		})
 		class TestSchema37B extends TestSchema37A {
 			@prop()
-			anotherProp: string
+			anotherProp: string;
 		}
 
 		expect(use(TestSchema37B)).to.deep.contains({
 			type: "object",
 			title: "TestSchema37B",
 			description: "Child schema description",
-		})
-	})
+		});
+	});
 
 	it('use the class name by default as schema description with inherited schema', () => {
 		@schema({
@@ -1355,19 +1355,19 @@ describe("schema", () => {
 		})
 		class TestSchema38A {
 			@prop()
-			myProp: string
+			myProp: string;
 		}
 
 		@schema()
 		class TestSchema38B extends TestSchema38A {
 			@prop()
-			anotherProp: string
+			anotherProp: string;
 		}
 
 		expect(use(TestSchema38B)).to.deep.contains({
 			type: "object",
 			title: "TestSchema38B",
 			description: "TestSchema38B",
-		})
-	})
+		});
+	});
 });
