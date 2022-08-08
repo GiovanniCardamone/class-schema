@@ -1300,4 +1300,28 @@ describe("schema", () => {
 			enum: ["a", "b", 1],
 		});
 	});
+
+	it('use the user-defined schema description', () => {
+		@schema({
+			description: 'My description'
+		})
+		class TestSchema35 {}
+
+		expect(use(TestSchema35)).to.deep.contains({
+			type: "object",
+			title: "TestSchema35",
+			description: "My description",
+		})
+	})
+
+	it('use the class name by default as schema description', () => {
+		@schema()
+		class TestSchema36 {}
+
+		expect(use(TestSchema36)).to.deep.contains({
+			type: "object",
+			title: "TestSchema36",
+			description: "TestSchema36",
+		})
+	})
 });
