@@ -1,3 +1,13 @@
+## [0.25.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.25.0...v0.25.1) (2022-08-09)
+
+
+### Bug Fixes
+
+* use the user defined description [#3](https://github.com/GiovanniCardamone/class-schema/issues/3) ([323b671](https://github.com/GiovanniCardamone/class-schema/commit/323b671851f6fd66ce3870ca0ee2547197733378))
+* use the user-defined schema description with inherited schemas ([e5495c6](https://github.com/GiovanniCardamone/class-schema/commit/e5495c61726a3d382a7beb9704e7e8a6319a23a5))
+
+
+
 # [0.25.0](https://github.com/GiovanniCardamone/class-schema/compare/v0.24.1...v0.25.0) (2022-05-10)
 
 
@@ -51,10 +61,6 @@
 
 
 ## [0.22.6](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.5...v0.22.6) (2022-04-11)
-
-
-
-## [0.22.5](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.4...v0.22.5) (2022-04-11)
 
 
 
