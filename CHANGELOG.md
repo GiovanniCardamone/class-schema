@@ -1,3 +1,12 @@
+## [0.25.3](https://github.com/GiovanniCardamone/class-schema/compare/v0.25.1...v0.25.3) (2023-01-21)
+
+
+### Bug Fixes
+
+* fixed anyOf, oneOf, allOf with primitive types ([375aed4](https://github.com/GiovanniCardamone/class-schema/commit/375aed462f4d3ace7417ac17e768ab3006b7843c))
+
+
+
 ## [0.25.1](https://github.com/GiovanniCardamone/class-schema/compare/v0.25.0...v0.25.1) (2022-08-09)
 
 
@@ -57,10 +66,6 @@
 
 
 ## [0.22.7](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.6...v0.22.7) (2022-04-11)
-
-
-
-## [0.22.6](https://github.com/GiovanniCardamone/class-schema/compare/v0.22.5...v0.22.6) (2022-04-11)
 
 
 
