@@ -100,7 +100,7 @@ function prop(...args: any[]) {
 
 		if (meta.name === 'Array' && type === undefined) {
 			throw new TypeError(
-				`in ${target.constructor.name}::${name} unable to recognize type array. use example: @prop(String, schemaItemProps)`
+				`in ${target.constructor.name}::${name} unable to recognize array type. use for example: @prop(String, schemaItemProps)`
 			)
 		}
 

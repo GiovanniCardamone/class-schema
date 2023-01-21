@@ -1,5 +1,5 @@
 import { JSONSchema4 } from "json-schema";
-import { AnyProp, SchemaProp } from "./decorators/prop";
+import { AnyProp, SchemaProp, ValidConstructor } from "./decorators/prop";
 import { JsonSchema4String } from "./jsonschema4";
 
 export interface Ctos {
@@ -12,27 +12,33 @@ export interface CtosSchema extends Ctos {
 }
 
 export interface Meta {
-	name: "Number" | "String" | "Boolean" | "Date" | "Object" | "Array";
+	name: "Number" | "String" | "Boolean" | "Date" | "Object" | "Array" | "Null";
 }
 
 /**
  *
  */
 export function wrapSchema(target: Ctos): CtosSchema["__schema"] {
-	const classSchema: CtosSchema =
-		"__schema" in target
-			? (target as CtosSchema)
-			: (target.constructor as CtosSchema);
+	const classSchema: CtosSchema = isPrimitive(target)
+		? ({
+				__schema: buildProperty(
+					target !== null ? (target.name as Meta["name"]) : "Null"
+				),
+		  } as CtosSchema)
+		: "__schema" in target
+		? (target as CtosSchema)
+		: (target.constructor as CtosSchema);
 
 	// console.log('target', target)
-	// console.log('classSchema', classSchema.__schema)
+
 	// console.log('constructor', target.constructor)
 	// console.log('parent', target.constructor.__proto__.constructor)
-	const extend = target.constructor.prototype.__proto__.constructor !== Object;
+	const extend = target?.constructor.prototype.__proto__.constructor !== Object;
 
 	if (
 		extend &&
-		(classSchema.__schema === undefined || "type" in classSchema.__schema)
+		(classSchema.__schema === undefined ||
+			("type" in classSchema.__schema && classSchema.__schema.type !== "null"))
 	) {
 		classSchema.__schema = {
 			properties: {},
@@ -84,8 +90,10 @@ export function buildProperty(
 				format: "date-time",
 				datetime: "ISO8601",
 			} as JsonSchema4String & AnyProp);
+		case "Null":
+			return composeProperty("null", props);
 		default:
-			return composeProperty("object", props);
+			throw new Error(`Unable to build property (${type})`);
 	}
 }
 
@@ -97,4 +105,16 @@ export function composeProperty(
 		type,
 		...props,
 	};
+}
+
+export function isPrimitive(
+	constructor: any
+): constructor is ValidConstructor | null {
+	return (
+		constructor === String ||
+		constructor === Number ||
+		constructor === Boolean ||
+		constructor === Date ||
+		constructor === null
+	);
 }

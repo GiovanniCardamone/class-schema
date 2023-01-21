@@ -1301,9 +1301,9 @@ describe("schema", () => {
 		});
 	});
 
-	it('use the user-defined schema description', () => {
+	it("use the user-defined schema description", () => {
 		@schema({
-			description: 'My description'
+			description: "My description",
 		})
 		class TestSchema35 {}
 
@@ -1314,7 +1314,7 @@ describe("schema", () => {
 		});
 	});
 
-	it('use the class name by default as schema description', () => {
+	it("use the class name by default as schema description", () => {
 		@schema()
 		class TestSchema36 {}
 
@@ -1325,9 +1325,9 @@ describe("schema", () => {
 		});
 	});
 
-	it('use the user-defined schema description with inherited schema', () => {
+	it("use the user-defined schema description with inherited schema", () => {
 		@schema({
-			description: 'Parent schema description'
+			description: "Parent schema description",
 		})
 		class TestSchema37A {
 			@prop()
@@ -1335,7 +1335,7 @@ describe("schema", () => {
 		}
 
 		@schema({
-			description: 'Child schema description'
+			description: "Child schema description",
 		})
 		class TestSchema37B extends TestSchema37A {
 			@prop()
@@ -1349,9 +1349,9 @@ describe("schema", () => {
 		});
 	});
 
-	it('use the class name by default as schema description with inherited schema', () => {
+	it("use the class name by default as schema description with inherited schema", () => {
 		@schema({
-			description: 'Parent schema description'
+			description: "Parent schema description",
 		})
 		class TestSchema38A {
 			@prop()
@@ -1368,6 +1368,71 @@ describe("schema", () => {
 			type: "object",
 			title: "TestSchema38B",
 			description: "TestSchema38B",
+		});
+	});
+
+	// it("expect no throw when extending empty schema", () => {
+	// 	@schema()
+	// 	class TestSchema39A {}
+
+	// 	@schema()
+	// 	class TestSchema39 extends TestSchema39A {}
+	// });
+
+	it("expect oneOf with primitive types", () => {
+		@schema()
+		class TestSchema40 {
+			@oneOf([String, Boolean])
+			value: string | boolean;
+		}
+
+		expect(use(TestSchema40)).to.deep.contain({
+			type: "object",
+			title: "TestSchema40",
+			properties: {
+				value: {
+					oneOf: [{ type: "string" }, { type: "boolean" }],
+				},
+			},
+			required: ["value"],
+		});
+	});
+
+	it("expect anyOf with primitive types", () => {
+		@schema()
+		class TestSchema41 {
+			@anyOf([String, null])
+			value: string | null;
+		}
+
+		expect(use(TestSchema41)).to.deep.contain({
+			type: "object",
+			title: "TestSchema41",
+			properties: {
+				value: {
+					anyOf: [{ type: "string" }, { type: "null" }],
+				},
+			},
+			required: ["value"],
+		});
+	});
+
+	it("expect allOf with primitive types", () => {
+		@schema()
+		class TestSchema42 {
+			@allOf([String, null, Number])
+			value: string | null;
+		}
+
+		expect(use(TestSchema42)).to.deep.contain({
+			type: "object",
+			title: "TestSchema42",
+			properties: {
+				value: {
+					allOf: [{ type: "string" }, { type: "null" }, { type: "number" }],
+				},
+			},
+			required: ["value"],
 		});
 	});
 });

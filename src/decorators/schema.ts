@@ -11,14 +11,14 @@ export default function schema(props?: JSONSchema4, additional?: Additional) {
 		const parentSchema = ctosSchema?.__proto__?.__schema;
 
 		ctosSchema.__schema = {
-			...props,
+			...(props ? props : {}),
 			type: "object",
 			title: constructor.name,
-			description: props?.description ?? constructor.name,
-			...ctosSchema?.__schema,
+			description: (props ? props?.description : undefined) ?? constructor.name,
+			...(ctosSchema?.__schema ? ctosSchema?.__schema : {}),
 		};
 
-		if (parentSchema) {
+		if (parentSchema && ctosSchema?.__schema) {
 			ctosSchema.__schema = {
 				...ctosSchema.__schema,
 				title: constructor.name,
